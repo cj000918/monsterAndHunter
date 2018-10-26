@@ -13,6 +13,16 @@ public class Message {
 
     private String describe;
 
+    private Object object;
+
+    public Object getObject() {
+        return object;
+    }
+
+    public void setObject(Object object) {
+        this.object = object;
+    }
+
     public boolean isSuccess() {
         return success;
     }

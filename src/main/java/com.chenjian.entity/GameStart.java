@@ -7,17 +7,18 @@ public class GameStart {
   
 	Hunter hunter;
 
-    public GameStart(){
+    public GameStart(String name){
     	
-    	String hunterName = GameUtil.getHunterName();
+//    	String hunterName = GameUtil.getHunterName();
 
-    	hunter = new Hunter(hunterName);
-    	
+    	hunter = new Hunter(name);
+
     	hunter.getWeapon();
  
     }
     
     public void start(){
+
 
         while(hunter.isLive){
            

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+    <head>
+        <title>Getting Started: Serving Web Content</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <!-- <link th:href="@{/css/game.css}" rel="stylesheet"/>-->
+    </head>
+    <body>
+
+        <h2 class="cj-p"> 请输入名字</h2>
+
+        <div class="search_box" style="width:500px;height:21px;background-color:#e6f0ef;">
+            <ul id="search_form">
+                <input type="text" id="hunterName" placeholder="必填" class="swap_value" style="text-align:center;"/>
+                <input type="button" value="确认" width="27" height="24" class="cj-queren" />
+            </ul>
+        </div>
+
+        <script th:src="@{/static/css/game.css}"></script>
+        <script th:src="@{http://code.jquery.com/jquery-1.11.1.min.js}" ></script>
+        <script th:src="@{/static/js/common.js}"></script>
+        <script th:src="@{/static/js/game.js}"></script>
+
+    </body>
+</html>
