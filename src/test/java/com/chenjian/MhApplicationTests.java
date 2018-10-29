@@ -1,4 +1,4 @@
-package com.chenjian.main;
+package com.chenjian;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,9 +1,9 @@
-package com.chenjian.main;
+package com.chenjian;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication (scanBasePackages =  "com.chenjian")
+@SpringBootApplication
 public class MhApplication {
 
     public static void main(String[] args) {
