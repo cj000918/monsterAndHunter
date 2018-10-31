@@ -1,23 +1,38 @@
 package com.chenjian.entity;
 
 
-import com.chenjian.util.GameUtil;
+import com.chenjian.util.RedisUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class GameStart {
-  
+
+    public GameStart(){
+
+    }
+
+    @Autowired
+    private RedisUtil redisUtil;
+
 	Hunter hunter;
 
-    public GameStart(String name){
-    	
-//    	String hunterName = GameUtil.getHunterName();
+    public GameStart setName(String name){
+
+        Monster.setRedisUtil(redisUtil);
+        Hunter.setRedisUtil(redisUtil);
+        Weapon.setRedisUtil(redisUtil);
+
+        redisUtil.hset("hunter_info",name,System.currentTimeMillis());
 
     	hunter = new Hunter(name);
-
-    	hunter.getWeapon();
+    	return this;
  
     }
     
     public void start(){
+
 
 
         while(hunter.isLive){
@@ -33,7 +48,7 @@ public class GameStart {
             Monster  monster = new Monster(hunter);
             
             System.out.println(" 遇到敌人 , " + monster.type);
-            
+
             monster.showMonsterInfo();
             
             hunter.fight(monster);
@@ -48,6 +63,8 @@ public class GameStart {
     public void end(){
         if(!hunter.isLive){
             System.out.println("GAME OVER");
+
+//            redisUtil.hset("info","game_over","GAME OVER");
         }
     }
 }

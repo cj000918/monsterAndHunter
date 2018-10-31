@@ -3,8 +3,19 @@ package com.chenjian.entity;
 
 import com.chenjian.enums.MonsterGradeEnums;
 import com.chenjian.util.GameUtil;
+import com.chenjian.util.RedisUtil;
+
 
 public class Hunter {   //爱丽丝
+
+
+    private static RedisUtil redisUtil;
+
+    public static void setRedisUtil(RedisUtil redisUtil1){
+        redisUtil = redisUtil1;
+    }
+
+
     String name;
     long maxLife;
     long curLife;
@@ -33,8 +44,10 @@ public class Hunter {   //爱丽丝
         
         this.maxAttack = 5;
         this.minAttack = 1;
+        getWeapon();
     }
-    
+
+
     /**
      * 获取武器
      */
@@ -49,11 +62,16 @@ public class Hunter {   //爱丽丝
     	if(weapon.weaponName.equals("未知")){
     		
     		System.out.println("悲剧, 没有随机到武器 ......."+"\n");
-    		
+            redisUtil.lSet(name,"悲剧, 没有随机到武器 .......",System.currentTimeMillis());
     		return ;
     	}
     	
     	weapon.showWeaponInfo();
+
+        redisUtil.hset(name+"_info","weaponName",weapon.weaponDescribe + weapon.weaponName);
+        redisUtil.hset(name+"_info","weaponMinAggressivity",weapon.minAggressivity);
+        redisUtil.hset(name+"_info","weaponMaxAggressivity",weapon.maxAggressivity);
+
     }
     
     /**
@@ -61,26 +79,33 @@ public class Hunter {   //爱丽丝
      * @param monster
      */
     public void fight(Monster monster){    
-        
+
+        String fightStr = "主角"+"【"+name+"】"+"已经牺牲了";
     	if(monster.isLive){
 	        
         	if(isLive){
         		
         		if(weapon.weaponName.equals("未知")){
-        			
-        			 System.out.println("没有武器, "+"【"+name+"】"+"一脸无奈的举起双拳"+", 死盯着"+monster.type+"的动向"+"\r\n");
+
+                    fightStr = "没有武器, "+"【"+name+"】"+"一脸无奈的举起双拳"+", 死盯着"+monster.type+"的动向";
         		}else{
-    		        System.out.println("【"+name+"】"+"无情的拿起"+weapon.getWeaponDescribe()+weapon.getWeaponName()+"杀向"+monster.type+"\r\n");
+                    fightStr = "【"+name+"】"+"无情的拿起"+weapon.getWeaponDescribe()+weapon.getWeaponName()+"杀向"+monster.type;
         		}
         		
         		 monster.injured(this);
 	        
-	        }else{
-	            System.out.println("主角"+"【"+name+"】"+"已经牺牲了"+"\r\n");
 	        }
-        }else{
-            System.out.println("拜托啊！这个丧尸已经被你打死啦！"+"\r\n");
+//	        else{
+//	            System.out.println(fightStr);
+//	        }
         }
+        else{
+            fightStr ="拜托啊！这个丧尸已经被你打死啦！";
+        }
+
+        System.out.println(fightStr+"\r\n");
+        redisUtil.lSet(name,fightStr,System.currentTimeMillis());
+
     }
 
     /**

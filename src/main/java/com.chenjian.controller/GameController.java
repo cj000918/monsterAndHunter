@@ -22,6 +22,9 @@ public class GameController {
     @Autowired
     private RedisUtil redisUtil;
 
+    @Autowired
+    GameStart gameStart;
+
     @RequestMapping( value = "/test", method = RequestMethod.GET)
     public String test(){
         redisUtil.hset("test","map1","test");
@@ -48,7 +51,7 @@ public class GameController {
 
             return message;
         }else{
-            new GameStart(name).start();
+             gameStart.setName(name).start();
         }
         message.setSuccess(true);
         return message;

@@ -3,8 +3,17 @@ package com.chenjian.entity;
 
 import com.chenjian.util.GameUtil;
 import com.chenjian.util.MonsterUtil;
+import com.chenjian.util.RedisUtil;
+
 
 public class Monster{
+
+    private static RedisUtil redisUtil;
+
+    public static void setRedisUtil(RedisUtil redisUtil1){
+        redisUtil = redisUtil1;
+    }
+
     long curLife;
     long maxLife;
     String type;
@@ -17,17 +26,9 @@ public class Monster{
     String name;		//名称
     String grade;		//级别
     String profession;  //职业
-   
-    
-//    public Monster(int mt){
-//        switch(mt){
-//        case 1: type = "超级丧尸";maxLife = 80; curLife = 80;  maxAttack = 25; minAttack = 15; defend = 15;    agile = 30;hideRate = 30;   break;
-//        case 2: type = "变异丧尸";maxLife = 80; curLife = 60;  maxAttack = 28; minAttack = 18; defend = 10;    agile = 40;hideRate = 20;   break;
-//        case 3: type = "普通丧尸";maxLife = 80; curLife = 40;  maxAttack = 10; minAttack = 3; defend = 5;     agile = 30;hideRate = 10;   break;
-//        case 4: type = "吸血鬼"; maxLife = 80; curLife = 60; maxAttack = 20; minAttack = 11; defend = 8; agile = 30;hideRate = 50; break;
-//        default: type = "隐藏BOSS"; maxLife = 100; curLife = 100; maxAttack = 50; minAttack = 30; defend = 20; agile = 60; hideRate = 60; break;
-//        }
-//    }
+
+
+
     
     public Monster(Hunter hunter){
     	
@@ -123,5 +124,16 @@ public class Monster{
 		System.out.println(" 防御力: " + defend);
 		System.out.println(" 敏捷: " + agile);
 		System.out.println(" 闪避率: " + hideRate+"\r\n");
+
+
+		redisUtil.hset("info","monsterName",type);
+        redisUtil.hset("info","monsterIsLive",isLive);
+        redisUtil.hset("info","monsterCurLife",curLife);
+        redisUtil.hset("info","monsterMinAttack",minAttack);
+        redisUtil.hset("info","monsterMaxAttack",maxAttack);
+        redisUtil.hset("info","monsterDefend",defend);
+        redisUtil.hset("info","monsterAgile",agile);
+        redisUtil.hset("info","monsterHideRate",hideRate);
+
     }
 }
