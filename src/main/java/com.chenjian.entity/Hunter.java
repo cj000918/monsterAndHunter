@@ -6,8 +6,7 @@ import com.chenjian.util.GameUtil;
 import com.chenjian.util.RedisUtil;
 
 
-public class Hunter {   //爱丽丝
-
+public class Hunter {
 
     private static RedisUtil redisUtil;
 
