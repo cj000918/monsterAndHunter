@@ -126,14 +126,14 @@ public class Monster{
 		System.out.println(" 闪避率: " + hideRate+"\r\n");
 
 
-		redisUtil.hset("info","monsterName",type);
-        redisUtil.hset("info","monsterIsLive",isLive);
-        redisUtil.hset("info","monsterCurLife",curLife);
-        redisUtil.hset("info","monsterMinAttack",minAttack);
-        redisUtil.hset("info","monsterMaxAttack",maxAttack);
-        redisUtil.hset("info","monsterDefend",defend);
-        redisUtil.hset("info","monsterAgile",agile);
-        redisUtil.hset("info","monsterHideRate",hideRate);
+		redisUtil.hset("Monster_info","monsterName",type);
+        redisUtil.hset("Monster_info","monsterIsLive",isLive);
+        redisUtil.hset("Monster_info","monsterCurLife",curLife);
+        redisUtil.hset("Monster_info","monsterMinAttack",minAttack);
+        redisUtil.hset("Monster_info","monsterMaxAttack",maxAttack);
+        redisUtil.hset("Monster_info","monsterDefend",defend);
+        redisUtil.hset("Monster_info","monsterAgile",agile);
+        redisUtil.hset("Monster_info","monsterHideRate",hideRate);
 
     }
 }

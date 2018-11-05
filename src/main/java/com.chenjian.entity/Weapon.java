@@ -71,9 +71,9 @@ public class Weapon {
     	System.out.println("武器属性: "+"\n");
     	System.out.println("攻击力: "+minAggressivity+"-" + maxAggressivity+"\n");
 
-		redisUtil.hset("weapon_info","weaponName",weaponDescribe + weaponName);
-		redisUtil.hset("weapon_info","weaponMinAggressivity",minAggressivity);
-		redisUtil.hset("weapon_info","weaponMaxAggressivity",maxAggressivity);
+//		redisUtil.hset("weapon_info","weaponName",weaponDescribe + weaponName);
+//		redisUtil.hset("weapon_info","weaponMinAggressivity",minAggressivity);
+//		redisUtil.hset("weapon_info","weaponMaxAggressivity",maxAggressivity);
 		
 	}
 }

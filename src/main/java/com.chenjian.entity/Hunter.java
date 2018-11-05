@@ -90,9 +90,13 @@ public class Hunter {
         		}else{
                     fightStr = "【"+name+"】"+"无情的拿起"+weapon.getWeaponDescribe()+weapon.getWeaponName()+"杀向"+monster.type;
         		}
-        		
-        		 monster.injured(this);
-	        
+
+                System.out.println(fightStr+"\r\n");
+
+                redisUtil.lSet(name,fightStr,System.currentTimeMillis());
+
+        		monster.injured(this);
+
 	        }
 //	        else{
 //	            System.out.println(fightStr);
@@ -102,8 +106,6 @@ public class Hunter {
             fightStr ="拜托啊！这个丧尸已经被你打死啦！";
         }
 
-        System.out.println(fightStr+"\r\n");
-        redisUtil.lSet(name,fightStr,System.currentTimeMillis());
 
     }
 

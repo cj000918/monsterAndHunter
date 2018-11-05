@@ -5,6 +5,7 @@ package com.chenjian.controller;
 import com.chenjian.entity.GameStart;
 import com.chenjian.entity.Message;
 import com.chenjian.util.RedisUtil;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,4 +64,18 @@ public class GameController {
         mv.setViewName("/greeting");
         return mv;
     }
+
+
+    @RequestMapping(value = "/message", method = RequestMethod.GET)
+    public Message getMessage(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+
+        Message message = new Message();
+
+        Object aa = redisUtil.hget("Monster_info","monsterName");
+
+        System.out.println("aa====="+aa);
+
+        return message;
+    }
+
 }

@@ -1,12 +1,17 @@
 package com.chenjian.entity;
 
 import com.chenjian.util.RedisUtil;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @PropertySource("classpath:redis.properties")
@@ -14,10 +19,10 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfig {
 
     @Bean
-    RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory configuration){
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
 
         RedisTemplate redisTemplate = new RedisTemplate();
-        redisTemplate.setConnectionFactory(configuration);
+        redisTemplate.setConnectionFactory(redisConnectionFactory);
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
@@ -27,7 +32,8 @@ public class RedisConfig {
     }
 
     @Bean
-    RedisUtil redisUtil(RedisTemplate redisTemplate){
+    public RedisUtil redisUtil(RedisTemplate redisTemplate){
+
         RedisUtil redisUtil= new RedisUtil();
         redisUtil.setRedisTemplate(redisTemplate);
         return redisUtil;
