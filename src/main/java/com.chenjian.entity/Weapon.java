@@ -5,7 +5,11 @@ import com.chenjian.util.RedisUtil;
 import com.chenjian.util.WeaponUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class Weapon {
+import java.io.Serializable;
+
+public class Weapon implements Serializable {
+
+	private static final long serialVersionUID = 1003L;
 
 	private static RedisUtil redisUtil;
 
@@ -17,6 +21,7 @@ public class Weapon {
 	String weaponDescribe;//品质
 	long maxAggressivity;//最大攻击力
 	long minAggressivity;//最小攻击力
+
 	
 	public String getWeaponName() {
 		return weaponName;

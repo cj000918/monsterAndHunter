@@ -6,6 +6,7 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -17,9 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RedisUtil {
 
-    @Autowired
     private RedisTemplate<String, Object> redisTemplate;
-
 
     public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;

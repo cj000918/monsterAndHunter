@@ -2,11 +2,16 @@ package com.chenjian.entity;
 
 
 import com.chenjian.util.GameUtil;
+import com.chenjian.util.JsonUtil;
 import com.chenjian.util.MonsterUtil;
 import com.chenjian.util.RedisUtil;
 
+import java.io.Serializable;
 
-public class Monster{
+
+public class Monster implements Serializable {
+
+    private static final long serialVersionUID = 1001L;
 
     private static RedisUtil redisUtil;
 
@@ -27,16 +32,109 @@ public class Monster{
     String grade;		//级别
     String profession;  //职业
 
+    public long getCurLife() {
+        return curLife;
+    }
 
+    public void setCurLife(long curLife) {
+        this.curLife = curLife;
+    }
 
-    
+    public long getMaxLife() {
+        return maxLife;
+    }
+
+    public void setMaxLife(long maxLife) {
+        this.maxLife = maxLife;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public boolean isLive() {
+        return isLive;
+    }
+
+    public void setLive(boolean live) {
+        isLive = live;
+    }
+
+    public long getMaxAttack() {
+        return maxAttack;
+    }
+
+    public void setMaxAttack(long maxAttack) {
+        this.maxAttack = maxAttack;
+    }
+
+    public long getMinAttack() {
+        return minAttack;
+    }
+
+    public void setMinAttack(long minAttack) {
+        this.minAttack = minAttack;
+    }
+
+    public long getDefend() {
+        return defend;
+    }
+
+    public void setDefend(long defend) {
+        this.defend = defend;
+    }
+
+    public long getAgile() {
+        return agile;
+    }
+
+    public void setAgile(long agile) {
+        this.agile = agile;
+    }
+
+    public long getHideRate() {
+        return hideRate;
+    }
+
+    public void setHideRate(long hideRate) {
+        this.hideRate = hideRate;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
     public Monster(Hunter hunter){
-    	
+
     	this.name = MonsterUtil.getMonsterName(hunter.level);
     	this.grade = MonsterUtil.getMonsterGrade(hunter.level);
     	this.profession = MonsterUtil.getMonsterProfession(hunter.level);
     	this.type = grade + name + profession;
-    	
+
     	this.hideRate = MonsterUtil.getHideRate(hunter.hideRate);
     	this.maxAttack = MonsterUtil.getMaxAttack(grade);
     	this.minAttack = MonsterUtil.getMinAttack(grade);
@@ -55,17 +153,25 @@ public class Monster{
     public void injured(Hunter hunter){
         //增加躲避的判断
         if(GameUtil.hidden(this.hideRate)){
+
             System.out.println("【"+type+"】"+" 躲过了 "+"【"+hunter.name+"】"+"的攻击"+"\r\n");
+
+            redisUtil.lSet("fight_info"+hunter.name,"【"+type+"】"+" 躲过了 "+"【"+hunter.name+"】"+"的攻击");
+
             showLiveStatus();
             kill(hunter);
             return;
         }
         
         System.out.println("【"+type+"】"+" 受到攻击 "+"\r\n");
+
+        redisUtil.lSet("fight_info"+hunter.name,"【"+type+"】"+" 受到攻击 ");
         
         long lostLife = GameUtil.calLostLife(hunter.maxAttack, hunter.minAttack, this.defend);
         
         System.out.println("【"+type+"】"+" 血量: -"+lostLife+"\r\n");
+
+        redisUtil.lSet("fight_info"+hunter.name,"【"+type+"】"+" 血量: -"+lostLife);
      
         curLife-=lostLife;
         
@@ -86,9 +192,13 @@ public class Monster{
         this.isLive = false;
         
         System.out.println("【"+type+"】"+" 被砍的四分五裂了 "+isLive+"\r\n");
+        redisUtil.lSet("fight_info"+hunter.name,"【"+type+"】"+" 被砍的四分五裂了 "+isLive);
+
         System.out.println("【"+hunter.name+"】" + " 增加经验:  "+maxLife+"\r\n");
+
+        redisUtil.lSet("fight_info"+hunter.name,"【"+hunter.name+"】" + " 增加经验:  "+maxLife);
         
-        hunter.expAdd(this);    //this
+        hunter.expAdd(this);
     }
     
     /**
@@ -97,10 +207,17 @@ public class Monster{
      */
     public void kill(Hunter hunter){
         if(isLive){
-	        System.out.println("【"+type+"】"+" 冲上去咬了 "+"【"+hunter.name+"】"+"一大口"+"\r\n");
+
+            System.out.println("【"+type+"】"+" 冲上去咬了 "+"【"+hunter.name+"】"+"一大口"+"\r\n");
+
+            redisUtil.lSet("fight_info"+hunter.name,"【"+type+"】"+" 冲上去咬了 "+"【"+hunter.name+"】"+"一大口");
+
 	        hunter.injured(this);
         }else{
+
             System.out.println("【"+type+"】"+" 已经被砍的四分五裂了 "+"\r\n");
+
+            redisUtil.lSet("fight_info"+hunter.name,"【"+type+"】"+" 已经被砍的四分五裂了 ");
         }
     }
     
@@ -126,14 +243,7 @@ public class Monster{
 		System.out.println(" 闪避率: " + hideRate+"\r\n");
 
 
-		redisUtil.hset("Monster_info","monsterName",type);
-        redisUtil.hset("Monster_info","monsterIsLive",isLive);
-        redisUtil.hset("Monster_info","monsterCurLife",curLife);
-        redisUtil.hset("Monster_info","monsterMinAttack",minAttack);
-        redisUtil.hset("Monster_info","monsterMaxAttack",maxAttack);
-        redisUtil.hset("Monster_info","monsterDefend",defend);
-        redisUtil.hset("Monster_info","monsterAgile",agile);
-        redisUtil.hset("Monster_info","monsterHideRate",hideRate);
+		redisUtil.lSet("Monster_list",type);
 
     }
 }

@@ -1,9 +1,10 @@
 package com.chenjian.entity;
 
-public class Message {
+import java.io.Serializable;
 
+public class Message implements Serializable {
 
-    private static final long serialVersionUID = 1008611L;
+    private static final long serialVersionUID = 1004L;
 
     private boolean success;
 
