@@ -45,13 +45,21 @@ public class GameStart {
                 Thread.sleep(3000);
            } catch(Exception e){
             	   
-           }  
-            
-            Monster  monster = new Monster(hunter);
+           }
+
+           long monsterId =  redisUtil.incr("Monster_id_list",1);
+
+           Monster  monster = new Monster(hunter);
+
+            monster.setMonsterId(monsterId);
             
             System.out.println(" 遇到敌人 , " + monster.type);
 
             monster.showMonsterInfo();
+
+            redisUtil.lSet("Monster_list",monster);
+
+            redisUtil.hset("Monster_info",monster.getMonsterId()+"", JsonUtil.objectToString(monster));
             
             hunter.fight(monster);
         }

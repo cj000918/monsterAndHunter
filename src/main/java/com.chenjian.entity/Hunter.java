@@ -168,10 +168,10 @@ public class Hunter implements Serializable {
     	if(weapon.weaponName.equals("未知")){
     		
     		System.out.println("悲剧, 没有随机到武器 ......."+"\n");
-            redisUtil.lSet("fight_info"+name,"悲剧, 没有随机到武器 .......");
+            redisUtil.lSet("fight_info_"+name,"悲剧, 没有随机到武器 .......");
     		return ;
     	}
-    	
+
     	weapon.showWeaponInfo();
 
         redisUtil.hset("weapon_info","weaponName",weapon.weaponDescribe + weapon.weaponName);
@@ -179,7 +179,7 @@ public class Hunter implements Serializable {
         redisUtil.hset("weapon_info","weaponMaxAggressivity",weapon.maxAggressivity);
 
     }
-    
+
     /**
      * 战斗
      * @param monster
@@ -188,12 +188,10 @@ public class Hunter implements Serializable {
 
         String fightStr = "主角"+"【"+name+"】"+"已经牺牲了";
 
-        redisUtil.hset("Monster_info",monster.type, JsonUtil.objectToString(monster));
-
     	if(monster.isLive){
-	        
+
         	if(isLive){
-        		
+
         		if(weapon.weaponName.equals("未知")){
 
                     fightStr = "没有武器, "+"【"+name+"】"+"一脸无奈的举起双拳"+", 死盯着"+monster.type+"的动向";
@@ -203,7 +201,7 @@ public class Hunter implements Serializable {
 
                 System.out.println(fightStr+"\r\n");
 
-                redisUtil.lSet("fight_info"+name,fightStr);
+                redisUtil.lSet("fight_info_"+name,fightStr);
 
         		monster.injured(this);
 
@@ -223,43 +221,43 @@ public class Hunter implements Serializable {
      * 扣血
      * @param monster
      */
-    public void injured(Monster monster){ 
+    public void injured(Monster monster){
         //增加躲避的判断
         if(monster.grade == MonsterGradeEnums.SHI_XUE.getShowName()){
             if(GameUtil.hidden(this.hideRate)){
 
                 System.out.println("【"+name+"】"+" 机智的躲过了攻击 "+"\r\n");
 
-                redisUtil.lSet("fight_info"+name,"【"+name+"】"+" 机智的躲过了攻击 ");
+                redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 机智的躲过了攻击 ");
 
                 showHunterInfo();
                 fight(monster);
                 return;
             }
-          
+
             System.out.println("【"+name+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!"+"\r\n");
 
-            redisUtil.lSet("fight_info"+name,"【"+name+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!");
-            
+            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!");
+
             long lostLife = GameUtil.calLostLife(monster.maxAttack, monster.minAttack, this.defend);
-            
+
             System.out.println("【"+name+"】"+" 血量: -"+lostLife+"\r\n");
 
-            redisUtil.lSet("fight_info"+name,"【"+name+"】"+" 血量: -"+lostLife);
-            
+            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 血量: -"+lostLife);
+
             curLife-=lostLife;
             if(curLife < 1){
                 curLife=0;
                 died();
                 return;
             }
-            
+
             monster.curLife = (int) (monster.curLife + this.curLife/10);
-            
+
             System.out.println(monster.type+":血量增加 "+(this.curLife/10)+"\r\n");
 
-            redisUtil.lSet("fight_info"+name,monster.type+":血量增加 "+(this.curLife/10));
-            
+            redisUtil.lSet("fight_info_"+name,monster.type+":血量增加 "+(this.curLife/10));
+
             showHunterInfo();
             fight(monster);
         }else{
@@ -267,25 +265,25 @@ public class Hunter implements Serializable {
 
 	            System.out.println("【"+name+"】"+" 机智的躲过了攻击"+"\r\n");
 
-                redisUtil.lSet("fight_info"+name,"【"+name+"】"+" 机智的躲过了攻击");
+                redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 机智的躲过了攻击");
 
 	            showHunterInfo();
 	            fight(monster);
 	            return;
 	        }
-	       
+
 	        System.out.println("【"+name+"】"+":疼疼疼疼疼疼疼疼......"+"\r\n");
 
-            redisUtil.lSet("fight_info"+name,"【"+name+"】"+":疼疼疼疼疼疼疼疼......");
-	        
+            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+":疼疼疼疼疼疼疼疼......");
+
 	        long lostLife = GameUtil.calLostLife(monster.maxAttack, monster.minAttack, this.defend);
-	       
+
 	        System.out.println("【"+name+"】"+" 血量: -"+lostLife+"\r\n");
 
-            redisUtil.lSet("fight_info"+name,"【"+name+"】"+" 血量: -"+lostLife);
+            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 血量: -"+lostLife);
 
 	        curLife-=lostLife;
-	       
+
 	        if(curLife < 1){
 	            curLife=0;
 	            died();
@@ -295,7 +293,7 @@ public class Hunter implements Serializable {
 	        fight(monster);
         }
     }
-    
+
     /**
      * 增加经验
      * @param monster
@@ -310,7 +308,7 @@ public class Hunter implements Serializable {
             upgrade();
         }
     }
-    
+
     /**
      * 升级
      */
@@ -321,46 +319,46 @@ public class Hunter implements Serializable {
         defend += 3;
         maxLife += 10;
         curLife = maxLife;
-        
+
         System.out.println("-----------------------等级提升----------------------------"+"\r\n");
 
-        redisUtil.lSet("fight_info"+name, "-----------------------等级提升----------------------------");
+        redisUtil.lSet("fight_info_"+name, "-----------------------等级提升----------------------------");
 
         System.out.println("系统提示：升级啦!"+"\r\n");
 
-        redisUtil.lSet("fight_info"+name, "系统提示：升级啦!");
+        redisUtil.lSet("fight_info_"+name, "系统提示：升级啦!");
 
         showHunterInfo();
     }
-    
+
     /**
      * 死亡
      */
     public void died(){
         System.out.println("【"+name+"】"+" 被怪物咬死了 , 头都不见了, 惨不忍睹..."+"\r\n");
 
-        redisUtil.lSet("fight_info"+name, "【"+name+"】"+" 被怪物咬死了 , 头都不见了, 惨不忍睹...");
+        redisUtil.lSet("fight_info_"+name, "【"+name+"】"+" 被怪物咬死了 , 头都不见了, 惨不忍睹...");
 
         isLive = false;
         showHunterInfo();
     }
-  
+
     /**
      * 展示信息
      */
     public void showHunterInfo(){
-    	
+
     	//计算升级需要的经验
     	if(exp >= needExp){
-    		
+
             for(int i=1;i<=level;i++){
                 needExp+=i*100;
             }
     	}
-    
+
         System.out.println("【"+name+"】"+" , 等级"+level+" ,血量"+curLife+" ,攻击力"+minAttack+"-"+maxAttack+" ,防御力"+defend+" ,当前经验: "+exp+"/"+needExp+"\r\n");
 
-        redisUtil.lSet("fight_info"+name,"【"+name+"】"+" , 等级"+level+" ,血量"+curLife+" ,攻击力"+minAttack+"-"+maxAttack+" ,防御力"+defend+" ,当前经验: "+exp+"/"+needExp);
+        redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" , 等级"+level+" ,血量"+curLife+" ,攻击力"+minAttack+"-"+maxAttack+" ,防御力"+defend+" ,当前经验: "+exp+"/"+needExp);
     }
 
 }
