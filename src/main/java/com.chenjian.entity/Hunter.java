@@ -201,7 +201,8 @@ public class Hunter implements Serializable {
 
                 System.out.println(fightStr+"\r\n");
 
-                redisUtil.lSet("fight_info_"+name,fightStr);
+//                redisUtil.lSet("fight_info_"+name,fightStr);
+                redisUtil.hset("fight_info_"+monster.type, monster.getMonsterId()+"" ,fightStr);
 
         		monster.injured(this);
 

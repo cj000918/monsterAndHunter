@@ -68,9 +68,11 @@ public class GameController {
 
         Message message = new Message();
 
-        Object aa = redisUtil.hget("Monster_info","monsterName");
+        for (int i = 0; i < 3; i++) {
 
-        System.out.println("aa====="+aa);
+           redisUtil.lSet("hh","哈哈");
+        }
+
 
         return message;
     }
