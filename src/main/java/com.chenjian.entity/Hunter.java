@@ -2,11 +2,13 @@ package com.chenjian.entity;
 
 
 import com.chenjian.enums.MonsterGradeEnums;
+import com.chenjian.util.DateUtil;
 import com.chenjian.util.GameUtil;
 import com.chenjian.util.JsonUtil;
 import com.chenjian.util.RedisUtil;
 
 import java.io.Serializable;
+import java.util.Date;
 
 
 public class Hunter implements Serializable {
@@ -154,6 +156,7 @@ public class Hunter implements Serializable {
     }
 
 
+
     /**
      * 获取武器
      */
@@ -168,7 +171,7 @@ public class Hunter implements Serializable {
     	if(weapon.weaponName.equals("未知")){
     		
     		System.out.println("悲剧, 没有随机到武器 ......."+"\n");
-            redisUtil.lSet("fight_info_"+name,"悲剧, 没有随机到武器 .......");
+            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"悲剧, 没有随机到武器 .......");
     		return ;
     	}
 
@@ -194,15 +197,15 @@ public class Hunter implements Serializable {
 
         		if(weapon.weaponName.equals("未知")){
 
-                    fightStr = "没有武器, "+"【"+name+"】"+"一脸无奈的举起双拳"+", 死盯着"+monster.type+"的动向";
+                    fightStr = DateUtil.getNowTime()+"没有武器, "+"【"+name+"】"+"一脸无奈的举起双拳"+", 死盯着"+monster.type+"的动向";
         		}else{
-                    fightStr = "【"+name+"】"+"无情的拿起"+weapon.getWeaponDescribe()+weapon.getWeaponName()+"杀向"+monster.type;
+                    fightStr = DateUtil.getNowTime()+"【"+name+"】"+"无情的拿起"+weapon.getWeaponDescribe()+weapon.getWeaponName()+"杀向"+monster.type;
         		}
 
                 System.out.println(fightStr+"\r\n");
 
-//                redisUtil.lSet("fight_info_"+name,fightStr);
-                redisUtil.hset("fight_info_"+monster.type, monster.getMonsterId()+"" ,fightStr);
+                redisUtil.lSet("fight_info_"+name,fightStr);
+                redisUtil.hset("fight_info_monster_"+monster.type, monster.getMonsterId()+"" ,fightStr);
 
         		monster.injured(this);
 
@@ -223,13 +226,14 @@ public class Hunter implements Serializable {
      * @param monster
      */
     public void injured(Monster monster){
+
         //增加躲避的判断
         if(monster.grade == MonsterGradeEnums.SHI_XUE.getShowName()){
             if(GameUtil.hidden(this.hideRate)){
 
                 System.out.println("【"+name+"】"+" 机智的躲过了攻击 "+"\r\n");
 
-                redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 机智的躲过了攻击 ");
+                redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+" 机智的躲过了攻击 ");
 
                 showHunterInfo();
                 fight(monster);
@@ -238,13 +242,13 @@ public class Hunter implements Serializable {
 
             System.out.println("【"+name+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!"+"\r\n");
 
-            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!");
+            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!");
 
             long lostLife = GameUtil.calLostLife(monster.maxAttack, monster.minAttack, this.defend);
 
             System.out.println("【"+name+"】"+" 血量: -"+lostLife+"\r\n");
 
-            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 血量: -"+lostLife);
+            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+" 血量: -"+lostLife);
 
             curLife-=lostLife;
             if(curLife < 1){
@@ -257,7 +261,7 @@ public class Hunter implements Serializable {
 
             System.out.println(monster.type+":血量增加 "+(this.curLife/10)+"\r\n");
 
-            redisUtil.lSet("fight_info_"+name,monster.type+":血量增加 "+(this.curLife/10));
+            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+monster.type+":血量增加 "+(this.curLife/10));
 
             showHunterInfo();
             fight(monster);
@@ -266,7 +270,7 @@ public class Hunter implements Serializable {
 
 	            System.out.println("【"+name+"】"+" 机智的躲过了攻击"+"\r\n");
 
-                redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 机智的躲过了攻击");
+                redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+" 机智的躲过了攻击");
 
 	            showHunterInfo();
 	            fight(monster);
@@ -275,13 +279,13 @@ public class Hunter implements Serializable {
 
 	        System.out.println("【"+name+"】"+":疼疼疼疼疼疼疼疼......"+"\r\n");
 
-            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+":疼疼疼疼疼疼疼疼......");
+            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+":疼疼疼疼疼疼疼疼......");
 
 	        long lostLife = GameUtil.calLostLife(monster.maxAttack, monster.minAttack, this.defend);
 
 	        System.out.println("【"+name+"】"+" 血量: -"+lostLife+"\r\n");
 
-            redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" 血量: -"+lostLife);
+            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+" 血量: -"+lostLife);
 
 	        curLife-=lostLife;
 
@@ -323,13 +327,14 @@ public class Hunter implements Serializable {
 
         System.out.println("-----------------------等级提升----------------------------"+"\r\n");
 
-        redisUtil.lSet("fight_info_"+name, "-----------------------等级提升----------------------------");
+        redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"-----------------------等级提升----------------------------");
 
         System.out.println("系统提示：升级啦!"+"\r\n");
 
-        redisUtil.lSet("fight_info_"+name, "系统提示：升级啦!");
+        redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"系统提示：升级啦!");
 
         showHunterInfo();
+
     }
 
     /**
@@ -338,7 +343,7 @@ public class Hunter implements Serializable {
     public void died(){
         System.out.println("【"+name+"】"+" 被怪物咬死了 , 头都不见了, 惨不忍睹..."+"\r\n");
 
-        redisUtil.lSet("fight_info_"+name, "【"+name+"】"+" 被怪物咬死了 , 头都不见了, 惨不忍睹...");
+        redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+" 被怪物咬死了 , 头都不见了, 惨不忍睹...");
 
         isLive = false;
         showHunterInfo();
@@ -359,7 +364,9 @@ public class Hunter implements Serializable {
 
         System.out.println("【"+name+"】"+" , 等级"+level+" ,血量"+curLife+" ,攻击力"+minAttack+"-"+maxAttack+" ,防御力"+defend+" ,当前经验: "+exp+"/"+needExp+"\r\n");
 
-        redisUtil.lSet("fight_info_"+name,"【"+name+"】"+" , 等级"+level+" ,血量"+curLife+" ,攻击力"+minAttack+"-"+maxAttack+" ,防御力"+defend+" ,当前经验: "+exp+"/"+needExp);
+        redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+"【"+name+"】"+" , 等级"+level+" ,血量"+curLife+" ,攻击力"+minAttack+"-"+maxAttack+" ,防御力"+defend+" ,当前经验: "+exp+"/"+needExp);
+
+        redisUtil.hset("hunter_info",name, "{name:"+name+" , level:"+level+" ,curLife:"+curLife+" ,minAttack:"+minAttack+", maxAttack:"+maxAttack+" ,defend"+defend+" ,exp: "+exp+", needExp:"+needExp+"}");
     }
 
 }

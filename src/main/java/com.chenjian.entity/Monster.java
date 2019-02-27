@@ -1,11 +1,13 @@
 package com.chenjian.entity;
 
 
+import com.chenjian.util.DateUtil;
 import com.chenjian.util.GameUtil;
 import com.chenjian.util.MonsterUtil;
 import com.chenjian.util.RedisUtil;
 
 import java.io.Serializable;
+import java.util.Date;
 
 
 public class Monster implements Serializable {
@@ -164,7 +166,7 @@ public class Monster implements Serializable {
 
             System.out.println("【"+type+"】"+" 躲过了 "+"【"+hunter.name+"】"+"的攻击"+"\r\n");
 
-            redisUtil.lSet("fight_info_"+hunter.name,"【"+type+"】"+" 躲过了 "+"【"+hunter.name+"】"+"的攻击");
+            redisUtil.lSet("fight_info_"+hunter.name, DateUtil.getNowTime()+"【"+type+"】"+" 躲过了 "+"【"+hunter.name+"】"+"的攻击");
 
             showLiveStatus();
             kill(hunter);
@@ -173,13 +175,13 @@ public class Monster implements Serializable {
         
         System.out.println("【"+type+"】"+" 受到攻击 "+"\r\n");
 
-        redisUtil.lSet("fight_info_"+hunter.name,"【"+type+"】"+" 受到攻击 ");
+        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime()+"【"+type+"】"+" 受到攻击 ");
         
         long lostLife = GameUtil.calLostLife(hunter.maxAttack, hunter.minAttack, this.defend);
         
         System.out.println("【"+type+"】"+" 血量: -"+lostLife+"\r\n");
 
-        redisUtil.lSet("fight_info_"+hunter.name,"【"+type+"】"+" 血量: -"+lostLife);
+        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime()+"【"+type+"】"+" 血量: -"+lostLife);
      
         curLife-=lostLife;
         
@@ -200,11 +202,11 @@ public class Monster implements Serializable {
         this.isLive = false;
         
         System.out.println("【"+type+"】"+" 被砍的四分五裂了 "+isLive+"\r\n");
-        redisUtil.lSet("fight_info_"+hunter.name,"【"+type+"】"+" 被砍的四分五裂了 "+isLive);
+        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime()+"【"+type+"】"+" 被砍的四分五裂了 "+isLive);
 
         System.out.println("【"+hunter.name+"】" + " 增加经验:  "+maxLife+"\r\n");
 
-        redisUtil.lSet("fight_info_"+hunter.name,"【"+hunter.name+"】" + " 增加经验:  "+maxLife);
+        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime()+"【"+hunter.name+"】" + " 增加经验:  "+maxLife);
         
         hunter.expAdd(this);
     }
@@ -218,14 +220,14 @@ public class Monster implements Serializable {
 
             System.out.println("【"+type+"】"+" 冲上去咬了 "+"【"+hunter.name+"】"+"一大口"+"\r\n");
 
-            redisUtil.lSet("fight_info_"+hunter.name,"【"+type+"】"+" 冲上去咬了 "+"【"+hunter.name+"】"+"一大口");
+            redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime()+"【"+type+"】"+" 冲上去咬了 "+"【"+hunter.name+"】"+"一大口");
 
 	        hunter.injured(this);
         }else{
 
             System.out.println("【"+type+"】"+" 已经被砍的四分五裂了 "+"\r\n");
 
-            redisUtil.lSet("fight_info_"+hunter.name,"【"+type+"】"+" 已经被砍的四分五裂了 ");
+            redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime()+"【"+type+"】"+" 已经被砍的四分五裂了 ");
         }
     }
     
@@ -239,8 +241,7 @@ public class Monster implements Serializable {
     /**
      * 详细信息展示
      */
-    public void showMonsterInfo(){
-
+    public void showMonsterInfo(Hunter hunter){
 
         System.out.println(" 名称: " + "【"+type+"】");
 		System.out.println(" 状态: " + isLive);
@@ -250,5 +251,12 @@ public class Monster implements Serializable {
 		System.out.println(" 敏捷: " + agile);
 		System.out.println(" 闪避率: " + hideRate+"\r\n");
 
+        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime()+"【"+type+"】"+" 状态: " + isLive+" 血量: " + curLife+" 攻击力: " + minAttack+"-"+maxAttack+" 防御力: " + defend+" 敏捷: " + agile+" 闪避率: " + hideRate);
+//        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime());
+//        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime());
+//        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime());
+//        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime());
+//        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime());
+//        redisUtil.lSet("fight_info_"+hunter.name,DateUtil.getNowTime());
     }
 }

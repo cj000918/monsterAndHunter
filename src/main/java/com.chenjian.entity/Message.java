@@ -1,8 +1,13 @@
 package com.chenjian.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Message implements Serializable {
+
+    public  Message(){
+    }
 
     private static final long serialVersionUID = 1004L;
 
@@ -53,5 +58,34 @@ public class Message implements Serializable {
 
     public void setDescribe(String describe) {
         this.describe = describe;
+    }
+
+
+    public static  Message fail(String context) {
+        return fail(false, context, new ArrayList());
+    }
+
+    public static  Message fail(String context, List dataList) {
+        return fail(false, context, dataList);
+    }
+
+    public static  Message fail(boolean success, String context, List dataList) {
+        Message messageData = new Message();
+        messageData.setMsg(context);
+        messageData.setSuccess(success);
+        messageData.setObject(dataList);
+        return messageData;
+    }
+
+    public static  Message success(String context) {
+        return success(context, new ArrayList());
+    }
+
+    public static  Message success(String context, List dataList) {
+        Message messageData = new Message();
+        messageData.setMsg(context);
+        messageData.setSuccess(true);
+        messageData.setObject(dataList);
+        return messageData;
     }
 }

@@ -1,20 +1,17 @@
 package com.chenjian.controller;
 
 
-
 import com.chenjian.entity.GameStart;
 import com.chenjian.entity.Message;
 import com.chenjian.util.RedisUtil;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import com.chenjian.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RestController
 public class GameController {
@@ -56,6 +53,9 @@ public class GameController {
 
             return message;
         }else{
+
+            redisUtil.del("Monster_id_list");
+
              gameStart.setName(name).start();
         }
         message.setSuccess(true);
@@ -64,17 +64,20 @@ public class GameController {
 
 
     @RequestMapping(value = "/message", method = RequestMethod.GET)
-    public Message getMessage(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+    public Message getMessage(@RequestParam String name){
 
         Message message = new Message();
-
-        for (int i = 0; i < 3; i++) {
-
-           redisUtil.lSet("hh","哈哈");
+        if(StringUtil.isNullTrim(name)){
+            return Message.fail("用户名称不能为空哦");
         }
 
+        String redisName = "fight_info_"+name;
 
-        return message;
+        long redisCount = redisUtil.lGetListSize(redisName);
+
+        List<Object> fightInfoList =  redisUtil.lGet(redisName, 0, redisCount);
+
+        return Message.success("查询成功", fightInfoList);
     }
 
 }

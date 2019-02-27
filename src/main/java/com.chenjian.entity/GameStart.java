@@ -1,6 +1,7 @@
 package com.chenjian.entity;
 
 
+import com.chenjian.util.DateUtil;
 import com.chenjian.util.JsonUtil;
 import com.chenjian.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,9 @@ public class GameStart {
 
             redisUtil.hset("hunter_info",hunter.name, JsonUtil.objectToString(hunter));
            
-        	System.out.println("------------------寻找对手中---------------------"+"\r\n");
+        	System.out.println("------------------正在探险中---------------------"+"\r\n");
+            redisUtil.lSet("fight_info_"+hunter.name, DateUtil.getNowTime()+"【"+hunter.name+"】------------------正在探险中---------------------");
+
             /**让程序休息3秒钟**/
            try{
                 Thread.sleep(3000);
@@ -53,9 +56,10 @@ public class GameStart {
 
             monster.setMonsterId(monsterId);
             
-            System.out.println(" 遇到敌人 , " + monster.type);
+            System.out.println(" 遭遇敌人 , " + monster.type);
+            redisUtil.lSet("fight_info_"+hunter.name, DateUtil.getNowTime()+"【"+hunter.name+"】"+"遭遇敌人 , ");
 
-            monster.showMonsterInfo();
+            monster.showMonsterInfo(hunter);
 
             redisUtil.lSet("Monster_list",monster);
 
@@ -72,9 +76,8 @@ public class GameStart {
      */
     public void end(){
         if(!hunter.isLive){
+            redisUtil.lSet("fight_info_"+hunter.name, DateUtil.getNowTime()+"【"+hunter.name+"】"+" GAME OVER...");
             System.out.println("GAME OVER");
-
-//            redisUtil.hset("info","game_over","GAME OVER");
         }
     }
 }
