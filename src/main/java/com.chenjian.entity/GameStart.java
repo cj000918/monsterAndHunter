@@ -76,8 +76,8 @@ public class GameStart {
      */
     public void end(){
         if(!hunter.isLive){
-            redisUtil.lSet("fight_info_"+hunter.name, DateUtil.getNowTime()+"【"+hunter.name+"】"+" GAME OVER...");
-            System.out.println("GAME OVER");
+            redisUtil.lSet("fight_info_"+hunter.name, DateUtil.getNowTime()+"【"+hunter.name+"】"+" GAME_OVER...");
+            System.out.println("GAME_OVER");
         }
     }
 }

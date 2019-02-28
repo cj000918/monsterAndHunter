@@ -39,6 +39,20 @@ public class GameController {
 
     /**
      *
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/test" , method = RequestMethod.GET)
+    public ModelAndView getTestView() {
+
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/test");
+        return mv;
+
+    }
+
+    /**
+     *
      */
     @RequestMapping( value = "/game", method = RequestMethod.GET)
     @ResponseBody

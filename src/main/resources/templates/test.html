@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无缝向上滚动</title>
+    <style>
+        *{margin:0;padding:0;font-size:12px;}
+        li{list-style:none;}
+        .box{margin:20px;width:320px;height:195px;border:1px solid #ddd;padding:10px;overflow:hidden;}
+        .box ul li{line-height:25px;}
+    </style>
+    <script src="../static/js/jquery.js"></script>
+    <script>
+
+        (function($){
+            $.fn.scrollTop = function(options){
+                var defaults = {
+                    speed:30
+                }
+                var opts = $.extend(defaults,options);
+                this.each(function(){
+                    var $timer;
+                    var scroll_top=0;
+                    var obj = $(this);
+                    var $height = obj.find(".uls").height();
+                    obj.find(".uls").clone().appendTo(obj);
+                    obj.hover(function(){
+                        clearInterval($timer);
+                    },function(){
+                        $timer = setInterval(function(){
+                            scroll_top++;
+                            if(scroll_top > $height){
+                                scroll_top = 0;
+                            }
+                            obj.find(".uls").first().css("margin-top",-scroll_top);
+                        },opts.speed);
+                    }).trigger("mouseleave");
+                })
+            }
+        })(jQuery);
+
+        $(function(){
+            $(".box").scrollTop({
+                speed:60 //数值越大 速度越慢
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="rightbtm box">
+                            <div class="uls">
+                                <p><span class="span1s">[出售信息]</span>样品中心报名流程与操作指南</p>
+                                <p><span class="span2s">[求购信息]</span>杭州农业有限公司求购牛奶300箱..</p>
+                                <p><span class="span2s">[求购信息]</span>襄阳傲农现代常年求购车厘子.</p>
+                                <p><span class="span3s">[转让信息]</span>余杭良渚街道一块农林用地转让。</p>
+                                <p><span class="span1s">[转让信息]</span>千岛湖农家乐一处转让</p>
+                                <p><span class="span2s">[出售信息]</span>10只大闸蟹 求买主</p>
+                            </div>
+                        </div>
+</body>
+</html>

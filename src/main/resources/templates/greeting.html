@@ -1,29 +1,40 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
-    <head>
-        <title>Getting Started: Serving Web Content</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" th:href="@{/static/css/game.css}">
+     <head>
+        <meta charset="utf-8">
+        <title>jQuery排行榜列表文字向上间歇滚动代码_js代码</title>
+        <meta name="keywords" content="jquery特效,文字滚动,文字列表,文字间歇滚动" />
+        <meta name="description" content="jQuery排行榜列表文字向上间歇滚动代码。" />
+        <link href="../static/css/index.css" rel="stylesheet" type="text/css">
+        <link href="../static/css/game.css" rel="stylesheet" type="text/css">
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/game.js"></script>
     </head>
+
     <body>
 
-        <h2 class="cj-p"> 请输入名字</h2>
+    <h2 class="cj-p"> 请输入名字</h2>
 
-        <div class="search_box">
-            <ul id="search_form">
-                <input type="text" id="hunterName" placeholder="必填" class="swap_value"/>
-                <input type="button" value="我要去战斗!!!" width="27" height="24" class="cj-queren" />
-            </ul>
-        </div>
-        <div class="cj-fight-info-list">
-            <button type="button" class="ivu-btn ivu-btn-primary cj-cx-info"><span>战斗信息</span></button>
-            <!--<ul class="ul-table-header cj-fight-info"></ul>-->
-        </div>
+    <div class="search_box">
+        <ul id="search_form">
+            <input type="text" id="hunterName" placeholder="必填" class="swap_value"/>
+            <input type="button" value="我要去战斗!!!" width="27" height="24" class="cj-queren" />
+        </ul>
+    </div>
 
-        <script th:src="@{http://code.jquery.com/jquery-1.11.1.min.js}" ></script>
-        <script th:src="@{/static/js/common.js}"></script>
-        <script th:src="@{/static/js/game.js}"></script>
+    <div class="cj-cx-info">
+        <button type="button" class="ivu-btn ivu-btn-primary "><span>战斗信息</span></button>
+    </div>
+
+    <div class="Top_Record" style="display:none;">
+        <div class="record_Top"><p>信息</p></div>
+        <div class="topRec_List">
+            <div class="maquee">
+                <ul class="cj-fight-info-list"></ul>
+            </div>
+        </div>
+    </div>
 
     </body>
+
 </html>
