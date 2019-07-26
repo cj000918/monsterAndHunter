@@ -197,15 +197,15 @@ public class Hunter implements Serializable {
 
         		if(weapon.weaponName.equals("未知")){
 
-                    fightStr = DateUtil.getNowTime()+"没有武器, "+"【"+name+"】"+"一脸无奈的举起双拳"+", 死盯着"+monster.type+"的动向";
+                    fightStr = DateUtil.getNowTime()+"没有武器, "+"【"+name+"】"+"一脸无奈的举起双拳"+", 死盯着"+monster.title+"的动向";
         		}else{
-                    fightStr = DateUtil.getNowTime()+"【"+name+"】"+"无情的拿起"+weapon.getWeaponDescribe()+weapon.getWeaponName()+"杀向"+monster.type;
+                    fightStr = DateUtil.getNowTime()+"【"+name+"】"+"无情的拿起"+weapon.getWeaponDescribe()+weapon.getWeaponName()+"杀向"+monster.title;
         		}
 
                 System.out.println(fightStr+"\r\n");
 
                 redisUtil.lSet("fight_info_"+name,fightStr);
-                redisUtil.hset("fight_info_monster_"+monster.type, monster.getMonsterId()+"" ,fightStr);
+                redisUtil.hset("fight_info_monster_"+monster.title, monster.getMonsterId()+"" ,fightStr);
 
         		monster.injured(this);
 
@@ -259,9 +259,9 @@ public class Hunter implements Serializable {
 
             monster.curLife = (int) (monster.curLife + this.curLife/10);
 
-            System.out.println(monster.type+":血量增加 "+(this.curLife/10)+"\r\n");
+            System.out.println(monster.title+":血量增加 "+(this.curLife/10)+"\r\n");
 
-            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+monster.type+":血量增加 "+(this.curLife/10));
+            redisUtil.lSet("fight_info_"+name, DateUtil.getNowTime()+monster.title+":血量增加 "+(this.curLife/10));
 
             showHunterInfo();
             fight(monster);

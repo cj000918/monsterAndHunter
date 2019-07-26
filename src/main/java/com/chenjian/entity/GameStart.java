@@ -56,7 +56,7 @@ public class GameStart {
 
             monster.setMonsterId(monsterId);
             
-            System.out.println(" 遭遇敌人 , " + monster.type);
+            System.out.println(" 遭遇敌人 , " + monster.title);
             redisUtil.lSet("fight_info_"+hunter.name, DateUtil.getNowTime()+"【"+hunter.name+"】"+"遭遇敌人 , ");
 
             monster.showMonsterInfo(hunter);
