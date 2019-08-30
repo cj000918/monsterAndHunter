@@ -8,9 +8,10 @@
 package com.chenjian.dao;
 
 import com.chenjian.entity.DBConnection;
-import com.chenjian.entity.Hunter;
+import com.chenjian.entity.HunterNew;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.HashMap;
@@ -20,11 +21,17 @@ import java.util.HashMap;
  * @description: 猎人操作数据库
  * @data: 2019-07-26 17:58
  **/
+@Component
 public class HunterDao extends DBConnection {
 
-    private static String USERNAMR = "root";
-    private static String PASSWORD = "";
-    private static String URL = "jdbc:mysql://47.101.51.192:3306/HunterAndMonster";
+    @Value("${jdbc_username}")
+    private String USERNAMR;
+
+    @Value("${jdbc_password}")
+    private String PASSWORD ;
+
+    @Value("${jdbc_url}")
+    private String URL;
 
 
     public HashMap<String,Object> queryColums(String tableName){
@@ -33,7 +40,7 @@ public class HunterDao extends DBConnection {
         PreparedStatement pstmt =null;
         ResultSet rs =null;
         try {
-            con = getConnection(URL, USERNAMR, PASSWORD);
+            con = getConnection(USERNAMR, PASSWORD,URL);
             String sql = "SELECT * FROM user_col_comments WHERE Table_Name='"+tableName+"'";
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
@@ -57,7 +64,7 @@ public class HunterDao extends DBConnection {
     }
 
 
-    public long addHunterInfo(Hunter hunter){
+    public long addHunterInfo(HunterNew hunter){
 
         int result = -1;
 
@@ -65,13 +72,12 @@ public class HunterDao extends DBConnection {
         ResultSet rs = null;
 
         try {
-            con = getConnection(URL, USERNAMR, PASSWORD);
-
+            con = getConnection(USERNAMR, PASSWORD,URL);
             pstmt = con.prepareStatement(" insert into hunter_info (" +
                     "name,max_life,cur_life,max_attack,min_attack,defend,level,exp,need_exp,agile,hide_rate) " +
                     "values(" +
-                    "?,?,?,?,?,?,?,?,?)" +
-                    "");
+                    "?,?,?,?,?,?,?,?,?,?,?)"
+                    );
             pstmt.setString(1, hunter.getName());
             pstmt.setLong(2, hunter.getMaxLife());
             pstmt.setLong(3, hunter.getCurLife());

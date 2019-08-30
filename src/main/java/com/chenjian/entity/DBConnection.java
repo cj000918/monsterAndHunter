@@ -9,7 +9,8 @@ import java.sql.SQLException;
  */
 public class DBConnection {
 
-    private static String DRVIER = "oracle.jdbc.OracleDriver";
+    private static String ORACLE_DRVIER = "oracle.jdbc.OracleDriver";
+    private static String MYSQL_DRVIER = "com.mysql.jdbc.Driver";
 
     // 创建一个数据库连接
     protected static Connection con = null;
@@ -21,7 +22,7 @@ public class DBConnection {
      */
     public static Connection getConnection(String userName, String passWord, String url) {
         try {
-            Class.forName(DRVIER);
+            Class.forName(MYSQL_DRVIER);
             con = DriverManager.getConnection(url, userName, passWord);
             System.out.println("成功连接数据库");
         } catch (ClassNotFoundException e) {
