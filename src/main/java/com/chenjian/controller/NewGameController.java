@@ -26,6 +26,11 @@ public class NewGameController {
     @Autowired
     private HunterService hunterService;
 
+
+    /**
+     *
+     * @return
+     */
     @GetMapping("add_hunter")
     public String addHuter(){
 
