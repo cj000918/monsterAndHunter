@@ -29,6 +29,28 @@ public class GameUtil {
 			return true;
 		}
     }
+
+	/**
+	 * 如果返回false则表示先手失败
+	 * @param hunterHideRate
+	 * @param monsterHideRate
+	 * @return
+	 */
+    public static Boolean hidden(Long hunterHideRate, Long monsterHideRate){
+
+		long hitRate1 = 100 - hunterHideRate;//100减去被攻击方的闪避, 得到攻击方的命中率
+		long ran1 = GameUtil.randomaNumber(100);
+		long result1 = ran1 + hitRate1;
+
+		long hitRate2 = 100 - monsterHideRate;//100减去被攻击方的闪避, 得到攻击方的命中率
+		long ran2 = GameUtil.randomaNumber(100);
+		long result2 = ran2 + hitRate2;
+
+		if(result1 < result2){
+			return false;
+		}
+		return true;
+	}
   
 	static long lostBasicLife = 1;
    

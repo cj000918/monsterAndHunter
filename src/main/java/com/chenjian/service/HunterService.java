@@ -12,4 +12,12 @@ import com.chenjian.entity.HunterNew;
 public interface HunterService {
 
     long addHunter(HunterNew hunterNew);
+
+    HunterNew getHunterNewById(Long hunterId);
+
+    void died(HunterNew hunterNew);
+
+    void showHunterInfo(HunterNew hunterNew);
+
+    void expAdd(HunterNew hunterNew, long exp);
 }

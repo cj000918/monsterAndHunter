@@ -7,121 +7,45 @@
  */
 package com.chenjian.entity;
 
-import java.io.Serializable;
+import lombok.Data;
 
 /**
  * @author: ChenJian
  * @description: 新猎人
  * @data: 2019-08-30 18:47
  **/
-public class HunterNew implements Serializable {
+@Data
+public class HunterNew{
 
-    String name;
-    long maxLife;
-    long curLife;
-    boolean isLive;
-    long maxAttack;         //最大攻击力
-    long minAttack;			//最小攻击力
-    long defend;         //防御力
-    long level;
-    long exp;
-    long needExp;
-    long agile;
-    long hideRate;
+    private String name;
+    private Long maxLife;
+    private Long curLife;
+    private Integer isLive;
+    private Long maxAttack;         //最大攻击力
+    private Long minAttack;			//最小攻击力
+    private Long defend;         //防御力
+    private Long level;
+    private Long exp;
+    private Long needExp;
+    private Long agile;
+    private Long hideRate;
 
-    public String getName() {
-        return name;
+    private Long hunterId;
+
+    public HunterNew(){
+
+        this.name = "小高炮";
+        this.maxLife = 1L;
+        this.curLife = 1L;
+        this.isLive = 0;
+        this.maxAttack = 1L;
+        this.minAttack = 1L;
+        this.defend = 1L;
+        this.level = 1L;
+        this.exp = 1L;
+        this.needExp = 1L;
+        this.agile = 1L;
+        this.hideRate = 1L;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public long getMaxLife() {
-        return maxLife;
-    }
-
-    public void setMaxLife(long maxLife) {
-        this.maxLife = maxLife;
-    }
-
-    public long getCurLife() {
-        return curLife;
-    }
-
-    public void setCurLife(long curLife) {
-        this.curLife = curLife;
-    }
-
-    public boolean isLive() {
-        return isLive;
-    }
-
-    public void setLive(boolean live) {
-        isLive = live;
-    }
-
-    public long getMaxAttack() {
-        return maxAttack;
-    }
-
-    public void setMaxAttack(long maxAttack) {
-        this.maxAttack = maxAttack;
-    }
-
-    public long getMinAttack() {
-        return minAttack;
-    }
-
-    public void setMinAttack(long minAttack) {
-        this.minAttack = minAttack;
-    }
-
-    public long getDefend() {
-        return defend;
-    }
-
-    public void setDefend(long defend) {
-        this.defend = defend;
-    }
-
-    public long getLevel() {
-        return level;
-    }
-
-    public void setLevel(long level) {
-        this.level = level;
-    }
-
-    public long getExp() {
-        return exp;
-    }
-
-    public void setExp(long exp) {
-        this.exp = exp;
-    }
-
-    public long getNeedExp() {
-        return needExp;
-    }
-
-    public void setNeedExp(long needExp) {
-        this.needExp = needExp;
-    }
-
-    public long getAgile() {
-        return agile;
-    }
-
-    public void setAgile(long agile) {
-        this.agile = agile;
-    }
-
-    public long getHideRate() {
-        return hideRate;
-    }
-
-    public void setHideRate(long hideRate) {
-        this.hideRate = hideRate;
-    }
 }

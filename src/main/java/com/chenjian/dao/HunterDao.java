@@ -64,6 +64,11 @@ public class HunterDao extends DBConnection {
     }
 
 
+    /**
+     * 添加hunter
+     * @param hunter
+     * @return
+     */
     public long addHunterInfo(HunterNew hunter){
 
         int result = -1;
@@ -74,9 +79,9 @@ public class HunterDao extends DBConnection {
         try {
             con = getConnection(USERNAMR, PASSWORD,URL);
             pstmt = con.prepareStatement(" insert into hunter_info (" +
-                    "name,max_life,cur_life,max_attack,min_attack,defend,level,exp,need_exp,agile,hide_rate) " +
+                    "name,max_life,cur_life,max_attack,min_attack,defend,level,exp,need_exp,agile,hide_rate,hunter_id) " +
                     "values(" +
-                    "?,?,?,?,?,?,?,?,?,?,?)"
+                    "?,?,?,?,?,?,?,?,?,?,?,?)"
                     );
             pstmt.setString(1, hunter.getName());
             pstmt.setLong(2, hunter.getMaxLife());
@@ -89,6 +94,7 @@ public class HunterDao extends DBConnection {
             pstmt.setLong(9, hunter.getNeedExp());
             pstmt.setLong(10, hunter.getAgile());
             pstmt.setLong(11, hunter.getHideRate());
+            pstmt.setLong(12, hunter.getHunterId());
 
             result = pstmt.executeUpdate();
 
@@ -103,7 +109,58 @@ public class HunterDao extends DBConnection {
 
             }
         }
-
         return result;
     }
+
+    /**
+     * 根据hunterId查询
+     * @param hunterId
+     * @return
+     */
+    public HunterNew getHunterById(Long hunterId){
+
+        HunterNew hunterNew = new HunterNew();
+
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            con = getConnection(USERNAMR, PASSWORD,URL);
+            pstmt = con.prepareStatement(" select * from  hunter_info where hunter_id = ?");
+            pstmt.setLong(1, hunterId);
+
+            ResultSet  resultSet = pstmt.executeQuery();
+
+            hunterNew.setHunterId(resultSet.getLong("hunter_id"));
+            hunterNew.setName(resultSet.getString("name"));
+            hunterNew.setAgile(resultSet.getLong("agile"));
+
+            hunterNew.setCurLife(resultSet.getLong("cur_life"));
+            hunterNew.setDefend(resultSet.getLong("defend"));
+            hunterNew.setExp(resultSet.getLong("exp"));
+
+            hunterNew.setHideRate(resultSet.getLong("hide_rate"));
+            hunterNew.setLevel(resultSet.getLong("level"));
+
+            hunterNew.setMaxAttack(resultSet.getLong("max_attack"));
+            hunterNew.setMaxLife(resultSet.getLong("max_life"));
+            hunterNew.setMinAttack(resultSet.getLong("min_attack"));
+
+            hunterNew.setNeedExp(resultSet.getLong("need_exp"));
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(con!=null) con.close();
+                if(pstmt!=null) pstmt.close();
+                if(rs!=null) rs.close();
+            }catch (Exception e){
+
+            }
+        }
+        return hunterNew;
+    }
+
+
 }

@@ -76,7 +76,7 @@ public class SnowflakeIdWorker {
      * @param workerId 工作ID (0~31)
      * @param datacenterId 数据中心ID (0~31)
      */
-    public SnowflakeIdWorker(long workerId, long datacenterId) {
+    private SnowflakeIdWorker(long workerId, long datacenterId) {
         if (workerId > maxWorkerId || workerId < 0) {
             throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
         }
@@ -146,6 +146,16 @@ public class SnowflakeIdWorker {
         return System.currentTimeMillis();
     }
 
+
+    /**
+     * 获取snowId
+     * @return 返回结果
+     */
+    public static Long getSnowFlakeId(){
+        SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
+
+        return idWorker.nextId();
+    }
 
     //==============================Test=============================================
     /** 测试 */

@@ -7,12 +7,20 @@
  */
 package com.chenjian.controller;
 
+import com.chenjian.entity.Hunter;
 import com.chenjian.entity.HunterNew;
+import com.chenjian.entity.MonsterNew;
+import com.chenjian.service.FightService;
 import com.chenjian.service.HunterService;
+import com.chenjian.service.MonsterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author: ChenJian
@@ -20,36 +28,25 @@ import org.springframework.web.bind.annotation.RestController;
  * @data: 2019-08-30 18:52
  **/
 @RestController
-@RequestMapping("hunter")
+@RequestMapping("/hunter")
 public class NewGameController {
 
     @Autowired
     private HunterService hunterService;
 
+    @Autowired
+    private MonsterService monsterService;
+
+    @Autowired
+    private FightService fightService;
+
 
     /**
-     *
+     * 创建猎人
      * @return
      */
-    @GetMapping("add_hunter")
-    public String addHuter(){
-
-        HunterNew hunterNew = new HunterNew();
-
-        hunterNew.setAgile(10);
-        hunterNew.setCurLife(1);
-        hunterNew.setDefend(1);
-        hunterNew.setExp(100);
-        hunterNew.setHideRate(1);
-
-        hunterNew.setLevel(1);
-        hunterNew.setLive(true);
-        hunterNew.setMaxAttack(1);
-        hunterNew.setMaxLife(1);
-        hunterNew.setMinAttack(1);
-
-        hunterNew.setName("小高炮");
-        hunterNew.setNeedExp(1);
+    @PostMapping("/add_hunter")
+    public String addHuter(HunterNew hunterNew){
 
        long result =  hunterService.addHunter(hunterNew);
 
@@ -59,6 +56,22 @@ public class NewGameController {
            return "添加失败";
        }
     }
+
+
+    @GetMapping("/fight")
+    public Map<String, Object> doFight(Long hunterId){
+
+        Map<String, Object> map = new HashMap<>();
+
+        HunterNew hunterNew = hunterService.getHunterNewById(hunterId);
+
+        MonsterNew monsterNew = monsterService.addMonsterByHunter(hunterNew);
+
+       String result = fightService.fightings(hunterNew, monsterNew);
+
+        return map;
+    }
+
 
 
 }
