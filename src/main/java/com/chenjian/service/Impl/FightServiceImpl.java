@@ -96,13 +96,16 @@ public class FightServiceImpl implements FightService {
 
                     System.out.println("【"+hunterNew.getName()+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!"+"\r\n");
 
+                    //怪物加血
                     long upLife =  monster.getCurLife() + lostLife;
                     monster.setCurLife(upLife);
+
                 }else{
                     System.out.println("【"+hunterNew.getName()+"】"+":疼疼疼疼疼疼疼疼......"+"\r\n");
                     System.out.println("【"+hunterNew.getName()+"】"+" 血量: -"+lostLife+"\r\n");
                 }
 
+                //hunter扣血， 并判断血量是否小于1导致死亡
                 curLife = hunterNew.getCurLife() - lostLife;
                 if(curLife < 1){
                     curLife = 0;
@@ -114,14 +117,16 @@ public class FightServiceImpl implements FightService {
             }
         }
 
-        //增加躲避的判断
+        System.out.println("【"+hunterNew.getName()+"】"+"面无表情杀向"+"【"+monster.getTitle()+"】");
+
+        //hunter攻击，对monster进行闪避=判断
         if(GameUtil.hidden(monster.getHideRate())){
 
             System.out.println("【"+monster.getTitle()+"】"+" 躲过了 "+"【"+ hunterNew.getName()+"】"+"的攻击"+"\r\n");
 
         }else{
 
-            lostLife = GameUtil.calLostLife(monster.getMaxAttack(), monster.getMinAttack(), hunterNew.getDefend());
+            lostLife = GameUtil.calLostLife(hunterNew.getMaxAttack(), hunterNew.getMinAttack(), monster.getDefend());
 
             curLife = monster.getCurLife() - lostLife;
 
@@ -143,6 +148,29 @@ public class FightServiceImpl implements FightService {
             }
         }
 
+        System.out.println("【"+monster.getTitle()+"】"+" 冲上去咬了 "+"【"+hunterNew.getName()+"】"+"一大口"+"\r\n");
+
+        //monster进行攻击， 对hunter进行闪避判断
+        if(GameUtil.hidden(hunterNew.getHideRate())){
+
+            System.out.println("【"+hunterNew.getName()+"】"+" 机智的躲过了攻击 "+"\r\n");
+
+        }else{
+
+            lostLife = GameUtil.calLostLife(monster.getMaxAttack(), monster.getMinAttack(), hunterNew.getDefend());
+
+            curLife = hunterNew.getCurLife() - lostLife;
+
+            System.out.println("【"+hunterNew.getName()+"】"+" 受到攻击 "+"\r\n");
+            System.out.println("【"+hunterNew.getName()+"】"+" 血量: -"+lostLife+"\r\n");
+
+            if(curLife < 1){
+
+                curLife = 0;
+                hunterService.died(hunterNew);
+                return;
+            }
+        }
     }
 
 }
