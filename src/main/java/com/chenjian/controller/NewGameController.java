@@ -14,10 +14,7 @@ import com.chenjian.service.FightService;
 import com.chenjian.service.HunterService;
 import com.chenjian.service.MonsterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,15 +43,12 @@ public class NewGameController {
      * @return
      */
     @PostMapping("/add_hunter")
-    public String addHuter(HunterNew hunterNew){
+    @ResponseBody
+    public String addHuter(@RequestBody HunterNew hunterNew){
 
        long result =  hunterService.addHunter(hunterNew);
 
-       if(result > 0){
-           return "添加成功";
-       }else{
-           return "添加失败";
-       }
+       return String.valueOf(result);
     }
 
 
@@ -65,9 +59,15 @@ public class NewGameController {
 
         HunterNew hunterNew = hunterService.getHunterNewById(hunterId);
 
+        if(hunterNew != null && hunterNew.getCurLife() > 0){
+            hunterNew.setIsLive(0);
+        }
         MonsterNew monsterNew = monsterService.addMonsterByHunter(hunterNew);
 
-       String result = fightService.fightings(hunterNew, monsterNew);
+        String result = fightService.fightings(hunterNew, monsterNew);
+
+        map.put("msg", result);
+        map.put("code", 100);
 
         return map;
     }

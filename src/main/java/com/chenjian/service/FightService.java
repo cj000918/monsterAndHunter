@@ -18,6 +18,6 @@ import com.chenjian.entity.MonsterNew;
 public interface FightService {
 
 
-        String fightings(HunterNew hunterNew, MonsterNew...monsterNews);
+        String fightings(HunterNew hunterNew, MonsterNew monsterNews);
 
 }

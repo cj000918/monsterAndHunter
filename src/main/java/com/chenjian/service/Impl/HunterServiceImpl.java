@@ -1,11 +1,8 @@
 package com.chenjian.service.Impl;
 
 import com.chenjian.dao.HunterDao;
-import com.chenjian.entity.Hunter;
 import com.chenjian.entity.HunterNew;
-import com.chenjian.entity.Monster;
 import com.chenjian.service.HunterService;
-import com.chenjian.util.DateUtil;
 import com.chenjian.util.SnowflakeIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +24,12 @@ public class HunterServiceImpl implements HunterService {
 
         long snowFlake= SnowflakeIdWorker.getSnowFlakeId();
         hunterNew.setHunterId(snowFlake);
-        return hunterDao.addHunterInfo(hunterNew);
+        long result  = hunterDao.addHunterInfo(hunterNew);
+
+        if(result > 0){
+            result = snowFlake;
+        }
+        return result;
     }
 
     @Override
@@ -79,7 +81,7 @@ public class HunterServiceImpl implements HunterService {
         long nowExp = hunterNew.getExp();
 
         nowExp = nowExp + exp;
-
+        hunterNew.setExp(nowExp);
         if( nowExp >= needExp){
             upgrade(hunterNew);
         }else{

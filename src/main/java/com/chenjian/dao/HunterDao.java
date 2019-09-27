@@ -131,22 +131,25 @@ public class HunterDao extends DBConnection {
 
             ResultSet  resultSet = pstmt.executeQuery();
 
-            hunterNew.setHunterId(resultSet.getLong("hunter_id"));
-            hunterNew.setName(resultSet.getString("name"));
-            hunterNew.setAgile(resultSet.getLong("agile"));
+            if(resultSet.next()){
+                hunterNew.setHunterId(resultSet.getLong("hunter_id"));
+                hunterNew.setName(resultSet.getString("name"));
+                hunterNew.setAgile(resultSet.getLong("agile"));
 
-            hunterNew.setCurLife(resultSet.getLong("cur_life"));
-            hunterNew.setDefend(resultSet.getLong("defend"));
-            hunterNew.setExp(resultSet.getLong("exp"));
+                hunterNew.setCurLife(resultSet.getLong("cur_life"));
+                hunterNew.setDefend(resultSet.getLong("defend"));
+                hunterNew.setExp(resultSet.getLong("exp"));
 
-            hunterNew.setHideRate(resultSet.getLong("hide_rate"));
-            hunterNew.setLevel(resultSet.getLong("level"));
+                hunterNew.setHideRate(resultSet.getLong("hide_rate"));
+                hunterNew.setLevel(resultSet.getLong("level"));
 
-            hunterNew.setMaxAttack(resultSet.getLong("max_attack"));
-            hunterNew.setMaxLife(resultSet.getLong("max_life"));
-            hunterNew.setMinAttack(resultSet.getLong("min_attack"));
+                hunterNew.setMaxAttack(resultSet.getLong("max_attack"));
+                hunterNew.setMaxLife(resultSet.getLong("max_life"));
+                hunterNew.setMinAttack(resultSet.getLong("min_attack"));
 
-            hunterNew.setNeedExp(resultSet.getLong("need_exp"));
+                hunterNew.setNeedExp(resultSet.getLong("need_exp"));
+            }
+
 
         }catch (Exception e) {
             e.printStackTrace();

@@ -20,7 +20,7 @@ public class HunterNew{
     private String name;
     private Long maxLife;
     private Long curLife;
-    private Integer isLive;
+    private Integer isLive;         //0为存活; 1死亡
     private Long maxAttack;         //最大攻击力
     private Long minAttack;			//最小攻击力
     private Long defend;         //防御力
@@ -34,18 +34,18 @@ public class HunterNew{
 
     public HunterNew(){
 
-        this.name = "小高炮";
-        this.maxLife = 1L;
-        this.curLife = 1L;
-        this.isLive = 0;
-        this.maxAttack = 1L;
-        this.minAttack = 1L;
-        this.defend = 1L;
-        this.level = 1L;
-        this.exp = 1L;
-        this.needExp = 1L;
-        this.agile = 1L;
-        this.hideRate = 1L;
+//        this.name = "小高炮";
+//        this.maxLife = 1L;
+//        this.curLife = 1L;
+//        this.isLive = 0;
+//        this.maxAttack = 1L;
+//        this.minAttack = 1L;
+//        this.defend = 1L;
+//        this.level = 1L;
+//        this.exp = 1L;
+//        this.needExp = 1L;
+//        this.agile = 1L;
+//        this.hideRate = 1L;
     }
 
 }

@@ -98,20 +98,23 @@ public class MonsterDao extends DBConnection {
 
             ResultSet  resultSet = pstmt.executeQuery();
 
-            monsterNew.setMonsterId(resultSet.getLong("monster_id"));
-            monsterNew.setName(resultSet.getString("name"));
-            monsterNew.setAgile(resultSet.getLong("agile"));
+            if(resultSet.next()){
+                monsterNew.setMonsterId(resultSet.getLong("monster_id"));
+                monsterNew.setName(resultSet.getString("name"));
+                monsterNew.setAgile(resultSet.getLong("agile"));
 
-            monsterNew.setCurLife(resultSet.getLong("cur_life"));
-            monsterNew.setDefend(resultSet.getLong("defend"));
-            monsterNew.setHideRate(resultSet.getLong("hide_rate"));
+                monsterNew.setCurLife(resultSet.getLong("cur_life"));
+                monsterNew.setDefend(resultSet.getLong("defend"));
+                monsterNew.setHideRate(resultSet.getLong("hide_rate"));
 
-            monsterNew.setMaxAttack(resultSet.getLong("max_attack"));
-            monsterNew.setMaxLife(resultSet.getLong("max_life"));
-            monsterNew.setMinAttack(resultSet.getLong("min_attack"));
+                monsterNew.setMaxAttack(resultSet.getLong("max_attack"));
+                monsterNew.setMaxLife(resultSet.getLong("max_life"));
+                monsterNew.setMinAttack(resultSet.getLong("min_attack"));
 
-            monsterNew.setGrade(resultSet.getString("grade"));
-            monsterNew.setProfession(resultSet.getString("profession"));
+                monsterNew.setGrade(resultSet.getString("grade"));
+                monsterNew.setProfession(resultSet.getString("profession"));
+            }
+
 
         }catch (Exception e) {
             e.printStackTrace();

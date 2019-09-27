@@ -13,7 +13,7 @@ public class MonsterNew {
     private  Long curLife;
     private  Long maxLife;
     private  String title;
-    private  Integer isLive;
+    private  Integer isLive;         //0为存活; 1死亡
     private  Long maxAttack;         //最大攻击力
     private  Long minAttack;			//最小攻击力
     private  Long defend;         //防御力
