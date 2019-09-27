@@ -8,6 +8,8 @@ MonsterAndHunter
 1.首先创建hunter
 
 localhost:8080/hunter/add_hunter
+
+参数：
 {
     "name": "小高炮",
     "maxLife" : "100",
@@ -24,6 +26,7 @@ localhost:8080/hunter/add_hunter
 }
 
 2.根据得到的hunterId进行战斗
+
 localhost:8080/hunter/fight?hunterId=627202435965779968
 
  
