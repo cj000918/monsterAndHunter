@@ -7,10 +7,9 @@
  */
 package com.chenjian.controller;
 
-import com.chenjian.entity.Hunter;
 import com.chenjian.entity.HunterNew;
 import com.chenjian.entity.MonsterNew;
-import com.chenjian.service.FightService;
+import com.chenjian.service.FightInfoService;
 import com.chenjian.service.HunterService;
 import com.chenjian.service.MonsterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class NewGameController {
     private MonsterService monsterService;
 
     @Autowired
-    private FightService fightService;
+    private FightInfoService fightService;
 
 
     /**

@@ -7,11 +7,14 @@
  */
 package com.chenjian.service.Impl;
 
+import com.chenjian.dao.FightInfoDao;
+import com.chenjian.entity.FightInfo;
 import com.chenjian.entity.HunterNew;
 import com.chenjian.entity.MonsterNew;
 import com.chenjian.job.FightWorker;
-import com.chenjian.service.FightService;
+import com.chenjian.service.FightInfoService;
 import com.chenjian.util.JobUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +26,10 @@ import java.util.HashMap;
  * @data: 2019-09-13 11:58
  **/
 @Service
-public class FightServiceImpl implements FightService {
+public class FightServiceImpl implements FightInfoService {
 
+    @Autowired
+     private FightInfoDao fightInfoDao;
 
     @Override
     @Async
@@ -35,6 +40,11 @@ public class FightServiceImpl implements FightService {
         }
         this.hunterAndMonsterFighting(hunterNew, monsterNew);
         return "成功";
+    }
+
+    @Override
+    public Long addFightInfo(FightInfo fightInfo) {
+        return fightInfoDao.addFightInfo(fightInfo);
     }
 
 
