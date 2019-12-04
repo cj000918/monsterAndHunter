@@ -1,6 +1,5 @@
 package com.chenjian.service;
 
-import com.chenjian.entity.Hunter;
 import com.chenjian.entity.HunterNew;
 
 /**
