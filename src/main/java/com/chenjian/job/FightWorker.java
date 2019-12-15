@@ -95,102 +95,18 @@ public class FightWorker extends JobWorker{
         System.out.println(" 遭遇敌人 , " + monster.getTitle());
 
         //判断谁先手， 如果为flase则monster先手
-        if (isFirst == !hiddenResult) {
+        if ( !hiddenResult) {
 
-            System.out.println("【" + hunterNew.getName() + "】" + " 还没反应过来， 就遭到了 【" + monster.getName() + "】的攻击" + "\r\n");
-            System.out.println("【"+monster.getTitle()+"】"+" 冲上去咬了 "+"【"+hunterNew.getName()+"】"+"一大口"+"\r\n");
-
-            lostLife = GameUtil.calLostLife(monster.getMaxAttack(), monster.getMinAttack(), hunterNew.getDefend());
-
-            if(lostLife > 0){
-
-                if(monster.getGrade() == MonsterGradeEnums.SHI_XUE.getShowName()){
-
-                    System.out.println("【"+hunterNew.getName()+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!"+"\r\n");
-
-                    //怪物加血
-                    long upLife =  monster.getCurLife() + lostLife;
-                    monster.setCurLife(upLife);
-
-                }else{
-                    System.out.println("【"+hunterNew.getName()+"】"+":疼疼疼疼疼疼疼疼......"+"\r\n");
-                }
-
-                //hunter扣血， 并判断血量是否小于1导致死亡
-                curLife = hunterNew.getCurLife() - lostLife;
-                hunterNew.setCurLife(curLife);
-
-                System.out.println("【"+hunterNew.getName()+"】"+" 血量: -"+lostLife+"\r\n");
-
-                if(curLife < 1){
-                    curLife = 0;
-                    hunterService.died(hunterNew);
-
-                    returnMap.put("code", 200);
-                    returnMap.put("curLife", curLife);
-                    returnMap.put("msg", "hunter死亡， 游戏结束");
-                    return returnMap;
-                }
-
-                hunterService.showHunterInfo(hunterNew);
-
-            }else{
-                System.out.println("【"+hunterNew.getName()+"】"+" 机智的躲过了攻击"+"\r\n");
+            //如果是第一次进行战斗， 则提示信息不同
+            if(isFirst){
+                System.out.println("【" + hunterNew.getName() + "】" + " 还没反应过来， 就遭到了 【" + monster.getName() + "】的攻击" + "\r\n");
+                System.out.println("【"+monster.getTitle()+"】"+" 冲上去咬了 "+"【"+hunterNew.getName()+"】"+"一大口"+"\r\n");
             }
-        }
 
-        System.out.println("【"+hunterNew.getName()+"】"+"面无表情杀向"+"【"+monster.getTitle()+"】");
+            curLife = fightMonster(hunterNew, monster);
 
-        //hunter攻击，对monster进行闪避=判断
-        if(GameUtil.hidden(monster.getHideRate())){
-
-            System.out.println("【"+monster.getTitle()+"】"+" 躲过了 "+"【"+ hunterNew.getName()+"】"+"的攻击"+"\r\n");
-
-        }else{
-
-            lostLife = GameUtil.calLostLife(hunterNew.getMaxAttack(), hunterNew.getMinAttack(), monster.getDefend());
-
-            curLife = monster.getCurLife() - lostLife;
-            monster.setCurLife(curLife);
-            System.out.println("【"+monster.getTitle()+"】"+" 受到攻击 "+"\r\n");
-            System.out.println("【"+monster.getTitle()+"】"+" 血量: -"+lostLife+"\r\n");
-
-            //monster扣血， 并判断是否死亡
+            //hunter死亡
             if(curLife < 1){
-
-                curLife = 0;
-
-                long exp = monsterService.died(monster);
-
-                System.out.println("【"+hunterNew.getName()+"】" + " 增加经验:  "+monster.getMaxLife()+"\r\n");
-
-                hunterService.expAdd(hunterNew, exp);
-
-                returnMap.put("code", 301);
-                returnMap.put("curLife", curLife);
-                returnMap.put("msg", "monster死亡， 进行下一轮战斗");
-                return returnMap;
-            }
-        }
-
-        System.out.println("【"+monster.getTitle()+"】"+" 冲上去咬了 "+"【"+hunterNew.getName()+"】"+"一大口"+"\r\n");
-
-        //monster进行攻击， 对hunter进行闪避判断
-        if(GameUtil.hidden(hunterNew.getHideRate())){
-
-            System.out.println("【"+hunterNew.getName()+"】"+" 机智的躲过了攻击 "+"\r\n");
-
-        }else{
-
-            lostLife = GameUtil.calLostLife(monster.getMaxAttack(), monster.getMinAttack(), hunterNew.getDefend());
-
-            curLife = hunterNew.getCurLife() - lostLife;
-
-            System.out.println("【"+hunterNew.getName()+"】"+" 受到攻击 "+"\r\n");
-            System.out.println("【"+hunterNew.getName()+"】"+" 血量: -"+lostLife+"\r\n");
-            hunterNew.setCurLife(curLife);
-            if(curLife < 1){
-
                 curLife = 0;
                 hunterService.died(hunterNew);
 
@@ -202,13 +118,113 @@ public class FightWorker extends JobWorker{
             hunterService.showHunterInfo(hunterNew);
         }
 
-        returnMap.put("code", 300);
-        returnMap.put("monster", monster);
-        returnMap.put("hunter", hunterNew);
-        returnMap.put("curLife", curLife);
-        returnMap.put("msg", "继续战斗");
+        curLife = fightHunter(hunterNew, monster);
+
+        //monster扣血， 并判断是否死亡
+        if(curLife < 1){
+
+            curLife = 0;
+
+            long exp = monsterService.died(monster);
+
+            System.out.println("【"+hunterNew.getName()+"】" + " 增加经验:  "+monster.getMaxLife()+"\r\n");
+
+            hunterService.expAdd(hunterNew, exp);
+
+            returnMap.put("code", 301);
+            returnMap.put("curLife", curLife);
+            returnMap.put("msg", "monster死亡， 进行下一轮战斗");
+
+        }else{
+            returnMap.put("code", 300);
+            returnMap.put("monster", monster);
+            returnMap.put("hunter", hunterNew);
+            returnMap.put("curLife", curLife);
+            returnMap.put("msg", "继续战斗");
+        }
 
         return returnMap;
+    }
+
+
+
+    //monster攻击，hunter防守
+    private Long fightMonster(HunterNew hunterNew, MonsterNew monsterNew){
+
+        //hunter剩余生命值
+        long curLife = 0;
+        //hunter扣减的生命值
+        long lostLife = 0;
+
+
+        lostLife = GameUtil.calLostLife(monsterNew.getMaxAttack(), monsterNew.getMinAttack(), hunterNew.getDefend());
+
+        System.out.println("【"+monsterNew.getTitle()+"】"+" 冲上去咬了 "+"【"+hunterNew.getName()+"】"+"一大口"+"\r\n");
+
+        if(lostLife > 0){
+
+            if(monsterNew.getGrade() == MonsterGradeEnums.SHI_XUE.getShowName()){
+
+                System.out.println("【"+hunterNew.getName()+"】"+":啊啊啊, 巨疼.....嗯? 这怪物还吸血?!!!"+"\r\n");
+
+                //怪物加血
+                long upLife =  monsterNew.getCurLife() + lostLife;
+                monsterNew.setCurLife(upLife);
+
+            }else{
+                System.out.println("【"+hunterNew.getName()+"】"+":疼疼疼疼疼疼疼疼......"+"\r\n");
+            }
+
+            //hunter扣血， 并判断血量是否小于1导致死亡
+            curLife = hunterNew.getCurLife() - lostLife;
+            hunterNew.setCurLife(curLife);
+
+            System.out.println("【"+hunterNew.getName()+"】"+" 血量: -"+lostLife+"\r\n");
+
+            //hunter死亡
+            if(curLife < 1){
+                curLife = 0;
+            }
+
+        }else{
+            System.out.println("【"+hunterNew.getName()+"】"+" 机智的躲过了攻击"+"\r\n");
+        }
+
+        return curLife;
+    }
+
+    //hunter攻击，monster防守
+    private Long fightHunter(HunterNew hunterNew, MonsterNew monsterNew){
+
+        //monster剩余生命值
+        long curLife = 0;
+        //monster扣减的生命值
+        long lostLife = 0;
+
+        System.out.println("【"+hunterNew.getName()+"】"+"面无表情杀向"+"【"+monsterNew.getTitle()+"】");
+
+        //hunter攻击，对monster进行闪避=判断
+        if(GameUtil.hidden(monsterNew.getHideRate())){
+
+            System.out.println("【"+monsterNew.getTitle()+"】"+" 躲过了 "+"【"+ hunterNew.getName()+"】"+"的攻击"+"\r\n");
+
+        }else{
+
+            lostLife = GameUtil.calLostLife(hunterNew.getMaxAttack(), hunterNew.getMinAttack(), monsterNew.getDefend());
+
+            curLife = monsterNew.getCurLife() - lostLife;
+            monsterNew.setCurLife(curLife);
+            System.out.println("【"+monsterNew.getTitle()+"】"+" 受到攻击 "+"\r\n");
+            System.out.println("【"+monsterNew.getTitle()+"】"+" 血量: -"+lostLife+"\r\n");
+
+            //monster扣血， 并判断是否死亡
+            if(curLife < 1){
+
+                curLife = 0;
+            }
+        }
+        return curLife;
+
     }
 
 
