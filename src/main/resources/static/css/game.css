@@ -1,20 +1,23 @@
 
-/*.swap_value {*/
-    /*width: 340px;*/
-    /*height: 30px;*/
-    /*line-height: 30px;*/
-    /*text-indent: 6px;*/
-    /*border: 1px solid #dce0e0;*/
-    /*color: #999;*/
-    /*font-size: 12px;*/
-    /*text-align:center;*/
-/*}*/
-/*body{*/
-    /*background-color:#d0e4fe;*/
-/*}*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font: 12px/1 宋体;
+}
+.content_center{
+    width: 500px;
+    /*background: greenyellow;*/
+    margin: 150px auto;
+}
 
 h2{
     color:orange;
+    height: 40px;
+    line-height: 40px;
     text-align:center;
 }
 
@@ -22,8 +25,8 @@ h2{
     text-align:center;
 }
 .cj-cx-info {
-    width:100px;
     text-align:center;
+    margin-top: 50px;
 }
 .swap_value{
     width:200px;

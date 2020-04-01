@@ -1,0 +1,71 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    width: 615px;
+    margin: 150px auto 25px auto;
+    overflow: hidden;
+    zoom: 1;
+}
+.hunter_info{
+    float: left;
+    width: 195px;
+    padding-top: 5px;
+    border: 2px solid rgba(15, 14, 15, 0.87);
+}
+.hunter_info div{
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+.operation{
+    float: left;
+    width: 160px;
+    padding-left: 28px;
+}
+.monster_info{
+    float: right;
+    width: 190px;
+    padding-top: 5px;
+    border: 2px solid rgba(15, 14, 15, 0.87);
+}
+
+.monster_info div{
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+
+.user_name{
+    color: red;
+    text-align:center;
+    margin: 25px auto;
+}
+
+input {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.operation_fight_but{
+    text-align:center;
+    margin: 40px auto;
+}
+
+.footer{
+    width: 615px;
+    margin: 0 auto;
+    padding-top: 5px;
+    border: 3px solid rgba(15, 14, 15, 0.87);
+}
+
+.footer_ul{
+    list-style:none
+}
+
+.footer_li{
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
