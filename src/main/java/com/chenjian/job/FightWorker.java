@@ -250,7 +250,7 @@ public class FightWorker extends JobWorker{
 
     //hunter攻击，monster防守
     private Long fightHunter(HunterNew hunterNew, MonsterNew monsterNew){
-        System.out.println("测试");
+
         //monster剩余生命值
         long curLife = 0;
         //monster扣减的生命值
