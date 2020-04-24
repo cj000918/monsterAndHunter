@@ -94,7 +94,7 @@ public class HunterDao extends DBConnection {
             pstmt.setLong(9, hunter.getNeedExp());
             pstmt.setLong(10, hunter.getAgile());
             pstmt.setLong(11, hunter.getHideRate());
-            pstmt.setLong(12, hunter.getHunterId());
+            pstmt.setString(12, hunter.getHunterId());
 
             result = pstmt.executeUpdate();
 
@@ -117,7 +117,7 @@ public class HunterDao extends DBConnection {
      * @param hunterId
      * @return
      */
-    public HunterNew getHunterById(Long hunterId){
+    public HunterNew getHunterById(String hunterId){
 
         HunterNew hunterNew = new HunterNew();
 
@@ -127,12 +127,12 @@ public class HunterDao extends DBConnection {
         try {
             con = getConnection(USERNAMR, PASSWORD,URL);
             pstmt = con.prepareStatement(" select * from  hunter_info where hunter_id = ?");
-            pstmt.setLong(1, hunterId);
+            pstmt.setString(1, hunterId);
 
             ResultSet  resultSet = pstmt.executeQuery();
 
             if(resultSet.next()){
-                hunterNew.setHunterId(resultSet.getLong("hunter_id"));
+                hunterNew.setHunterId(resultSet.getString("hunter_id"));
                 hunterNew.setName(resultSet.getString("name"));
                 hunterNew.setAgile(resultSet.getLong("agile"));
 

@@ -26,23 +26,24 @@ public class FightInfo {
 //  `create_time` timestamp NULL DEFAULT NULL,
 
     private Long id;
-    private Long hunterId;
-    private Long monsterId;
+    private String hunterId;
+    private String monsterId;
     private String remark;
     private Timestamp createTime;
 
     public FightInfo(){}
 
-    public FightInfo(Long hunterId, Long monsterId, String remark, Timestamp createTime){
+    public FightInfo(String hunterId, String monsterId, String remark, Timestamp createTime){
 
         this.hunterId = hunterId;
         this.monsterId = monsterId;
         this.remark = remark;
-
+        this.createTime = createTime;
         if(createTime == null){
-            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            this.createTime = timestamp;
+            this.createTime = new Timestamp(System.currentTimeMillis());
         }
+
+
     }
 
 }

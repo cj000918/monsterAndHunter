@@ -65,7 +65,7 @@ public class MonsterServiceImpl implements MonsterService {
     @Override
     public Long died(MonsterNew monster){
 
-        monster.setIsLive(0);
+        monster.setIsLive(1);
         System.out.println("【"+monster.getTitle()+"】"+" 被砍的四分五裂了 ."+"\r\n");
         return monster.getMaxLife();
     }

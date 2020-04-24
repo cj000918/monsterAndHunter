@@ -20,20 +20,23 @@ public class HunterServiceImpl implements HunterService {
     private HunterDao hunterDao;
 
     @Override
-    public long addHunter(HunterNew hunterNew) {
+    public String addHunter(HunterNew hunterNew) {
+
+        String DBResult = null;
 
         long snowFlake= SnowflakeIdWorker.getSnowFlakeId();
-        hunterNew.setHunterId(snowFlake);
+
+        hunterNew.setHunterId(snowFlake+"");
         long result  = hunterDao.addHunterInfo(hunterNew);
 
         if(result > 0){
-            result = snowFlake;
+            DBResult = snowFlake + "";
         }
-        return result;
+        return DBResult;
     }
 
     @Override
-    public HunterNew getHunterNewById(Long hunterId) {
+    public HunterNew getHunterNewById(String hunterId) {
         return hunterDao.getHunterById(hunterId);
     }
 
@@ -54,7 +57,7 @@ public class HunterServiceImpl implements HunterService {
 
         System.out.println("【"+hunterNew.getName()+"】"+" 被怪物咬死了 , 头都不见了, 惨不忍睹..."+"\r\n");
         hunterNew.setCurLife(0L);
-        hunterNew.setIsLive(0);
+        hunterNew.setIsLive(1);
         showHunterInfo(hunterNew);
     }
 
@@ -66,7 +69,7 @@ public class HunterServiceImpl implements HunterService {
     public void expAdd(HunterNew hunterNew, long exp){
 
         //存活的hunter才需要计算经验
-        if(hunterNew.getIsLive() == 1 && hunterNew.getCurLife() > 0){
+        if(hunterNew.getIsLive() == 0 && hunterNew.getCurLife() > 0){
             //计算升级需要的经验
             if(hunterNew.getExp() >= hunterNew.getNeedExp()){
                 long needExp = hunterNew.getNeedExp();

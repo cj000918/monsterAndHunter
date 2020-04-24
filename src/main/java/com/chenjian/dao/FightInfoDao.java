@@ -56,8 +56,8 @@ public class FightInfoDao extends DBConnection {
                     "values(" +
                     "?,?,?,?)"
             );
-            pstmt.setLong(1, fightInfo.getHunterId());
-            pstmt.setLong(2, fightInfo.getMonsterId());
+            pstmt.setString(1, fightInfo.getHunterId());
+            pstmt.setString(2, fightInfo.getMonsterId());
             pstmt.setString(3, fightInfo.getRemark());
             pstmt.setTimestamp(4, fightInfo.getCreateTime());
 
@@ -97,8 +97,8 @@ public class FightInfoDao extends DBConnection {
             ResultSet  resultSet = pstmt.executeQuery();
 
             if(resultSet.next()){
-                fightInfo.setHunterId(resultSet.getLong("hunter_id"));
-                fightInfo.setMonsterId(resultSet.getLong("monster_id"));
+                fightInfo.setHunterId(resultSet.getString("hunter_id"));
+                fightInfo.setMonsterId(resultSet.getString("monster_id"));
                 fightInfo.setRemark(resultSet.getString("remark"));
                 fightInfo.setCreateTime(resultSet.getTimestamp("create_time"));
                 fightInfo.setId(resultSet.getLong("id"));

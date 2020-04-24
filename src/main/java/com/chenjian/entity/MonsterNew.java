@@ -22,7 +22,7 @@ public class MonsterNew {
     private  String name;		//名称
     private String grade;		//级别
     private String profession;  //职业
-    private  Long monsterId;
+    private  String monsterId;
 
     public MonsterNew(){}
 
@@ -41,8 +41,8 @@ public class MonsterNew {
     	this.maxLife = MonsterUtil.getMonsterMaxLife(defend);
     	
     	this.curLife = maxLife;
-    	this.isLive = 0;
-        this.monsterId = SnowflakeIdWorker.getSnowFlakeId();
+    	this.isLive = 0;//0 表示存活
+        this.monsterId = SnowflakeIdWorker.getSnowFlakeId()+"";
     }
 
 }

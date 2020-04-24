@@ -12,8 +12,10 @@ import com.chenjian.entity.MonsterNew;
 import com.chenjian.service.FightInfoService;
 import com.chenjian.service.HunterService;
 import com.chenjian.service.MonsterService;
+import com.chenjian.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,21 +40,58 @@ public class NewGameController {
 
 
     /**
-     * 创建猎人
+     * 静态页面
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/star" , method = RequestMethod.GET)
+    public ModelAndView getStartView() {
+
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/new_fighting");
+        return mv;
+
+    }
+
+
+    /**
+     * 创建猎人 第一版
      * @return
      */
     @PostMapping("/add_hunter")
     @ResponseBody
     public String addHuter(@RequestBody HunterNew hunterNew){
 
-       long result =  hunterService.addHunter(hunterNew);
+        return hunterService.addHunter(hunterNew);
+     }
 
-       return String.valueOf(result);
+    /**
+     * 创建猎人 第二版（暂用此法）
+     * @return
+     */
+    @GetMapping("/add_hunter_2")
+    @ResponseBody
+    public Map<String, Object> addHuter2(String name){
+
+        HunterNew hunterNew = new HunterNew();
+        hunterNew.setName(name);
+
+        String result =  hunterService.addHunter(hunterNew);
+
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("hunterId", result);
+        map.put("success", true);
+
+        return map;
+
     }
 
 
+
+
     @GetMapping("/fight")
-    public Map<String, Object> doFight(Long hunterId){
+    public Map<String, Object> doFight(String hunterId){
 
         Map<String, Object> map = new HashMap<>();
 
@@ -62,7 +101,6 @@ public class NewGameController {
             hunterNew.setIsLive(0);
         }
         MonsterNew monsterNew = monsterService.addMonsterByHunter(hunterNew);
-
         String result = fightService.fightings(hunterNew, monsterNew);
 
         map.put("msg", result);

@@ -30,22 +30,22 @@ public class HunterNew{
     private Long agile;
     private Long hideRate;
 
-    private Long hunterId;
+    private String hunterId;
 
     public HunterNew(){
 
 //        this.name = "小高炮";
-//        this.maxLife = 1L;
-//        this.curLife = 1L;
-//        this.isLive = 0;
-//        this.maxAttack = 1L;
-//        this.minAttack = 1L;
-//        this.defend = 1L;
-//        this.level = 1L;
-//        this.exp = 1L;
-//        this.needExp = 1L;
-//        this.agile = 1L;
-//        this.hideRate = 1L;
+        this.maxLife = 100L;
+        this.curLife = 100L;
+        this.isLive = 0;//0 表示存活
+        this.maxAttack = 10L;
+        this.minAttack = 5L;
+        this.defend = 3L;
+        this.level = 1L;
+        this.exp = 0L;
+        this.needExp = 100L;
+        this.agile = 3L;
+        this.hideRate = 3L;
     }
 
 }

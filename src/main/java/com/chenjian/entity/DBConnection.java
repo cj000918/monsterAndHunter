@@ -24,7 +24,6 @@ public class DBConnection {
         try {
             Class.forName(MYSQL_DRVIER);
             con = DriverManager.getConnection(url, userName, passWord);
-            System.out.println("成功连接数据库");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("class not find !", e);
         } catch (SQLException e) {
