@@ -19,6 +19,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author: ChenJian
@@ -45,6 +46,11 @@ public class FightServiceImpl implements FightInfoService {
     @Override
     public Long addFightInfo(FightInfo fightInfo) {
         return fightInfoDao.addFightInfo(fightInfo);
+    }
+
+    @Override
+    public List<FightInfo> getFightInfo(String hunterId) {
+        return fightInfoDao.getFightInfoHunterId(hunterId, null);
     }
 
 

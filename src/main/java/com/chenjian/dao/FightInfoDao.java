@@ -15,6 +15,9 @@ import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.chenjian.entity.DBConnection.getConnection;
 
@@ -82,26 +85,34 @@ public class FightInfoDao extends DBConnection {
      * @param hunterId
      * @return
      */
-    public FightInfo getFightInfoHunterId(Long hunterId){
+    public List<FightInfo> getFightInfoHunterId(String hunterId, Timestamp time){
 
-        FightInfo fightInfo = new FightInfo();
 
+        List<FightInfo> fightInfoList = new ArrayList<>();
         ResultSet rs = null;
         PreparedStatement pstmt = null;
 
+        if(time == null){
+            time = new Timestamp(System.currentTimeMillis());
+        }
+
         try {
             con = getConnection(USERNAMR, PASSWORD,URL);
-            pstmt = con.prepareStatement(" select * from  fight_info where hunter_id = ?");
-            pstmt.setLong(1, hunterId);
+//            pstmt = con.prepareStatement(" select * from  fight_info where hunter_id = ? and create_time > ?");
+            pstmt = con.prepareStatement(" select * from  fight_info where hunter_id = ? ");
+            pstmt.setString(1, hunterId);
+//            pstmt.setTimestamp(2, time);
 
             ResultSet  resultSet = pstmt.executeQuery();
 
-            if(resultSet.next()){
+            while(resultSet.next()){
+                FightInfo fightInfo = new FightInfo();
                 fightInfo.setHunterId(resultSet.getString("hunter_id"));
                 fightInfo.setMonsterId(resultSet.getString("monster_id"));
                 fightInfo.setRemark(resultSet.getString("remark"));
                 fightInfo.setCreateTime(resultSet.getTimestamp("create_time"));
                 fightInfo.setId(resultSet.getLong("id"));
+                fightInfoList.add(fightInfo);
             }
 
         }catch (Exception e) {
@@ -115,7 +126,7 @@ public class FightInfoDao extends DBConnection {
 
             }
         }
-        return fightInfo;
+        return fightInfoList;
     }
 
 
