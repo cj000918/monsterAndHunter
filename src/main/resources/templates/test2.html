@@ -1,0 +1,24 @@
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
+<style>div.marquee{overflow:hidden;background:#ccc;width:400px;height:140px;line-height:30px}</style>
+
+<script>
+
+    var s = '<div class="marquee">';
+    for (var i = 0; i < 10; i++){
+        s += i + '该系统于2017-06-21进行维护，望相互告知！！！<br />'
+    };
+
+    s += '</div>';
+
+    document.write(s)
+
+</script><br />
+
+
+<div class="marquee">该系统于2017-06-21进行维护，望相互告知！！！</div>
+
+<script>
+    $('div.marquee').each(function () {
+        if (this.scrollHeight > this.offsetHeight) $(this).html('<marquee behavior="scroll" direction="up" scrollamount="1" height="140" onmouseover="this.stop()" onmouseout="this.start()">'+this.innerHTML+'</marquee>');
+    });
+</script>

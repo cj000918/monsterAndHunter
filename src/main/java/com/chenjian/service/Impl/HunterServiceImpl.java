@@ -40,6 +40,11 @@ public class HunterServiceImpl implements HunterService {
         return hunterDao.getHunterById(hunterId);
     }
 
+    @Override
+    public HunterNew getHunterNewByName(String hunterName) {
+        return hunterDao.getHunterByName(hunterName);
+    }
+
 
     /**
      * 展示信息

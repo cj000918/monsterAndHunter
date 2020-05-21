@@ -11,6 +11,8 @@ import com.chenjian.entity.FightInfo;
 import com.chenjian.entity.HunterNew;
 import com.chenjian.entity.MonsterNew;
 
+import java.util.List;
+
 /**
  * @author: ChenJian
  * @description:
@@ -22,5 +24,7 @@ public interface FightInfoService {
         String fightings(HunterNew hunterNew, MonsterNew monsterNews);
 
         Long addFightInfo(FightInfo fightInfo);
+
+        List<FightInfo> getFightInfo(String hunterId);
 
 }

@@ -14,6 +14,8 @@ public interface HunterService {
 
     HunterNew getHunterNewById(String hunterId);
 
+    HunterNew getHunterNewByName(String hunterName);
+
     void died(HunterNew hunterNew);
 
     void showHunterInfo(HunterNew hunterNew);

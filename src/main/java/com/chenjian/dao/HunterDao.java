@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 /**
@@ -61,6 +62,32 @@ public class HunterDao extends DBConnection {
         }
 
         return map;
+    }
+
+    private HunterNew gethunterNewInfo (ResultSet  resultSet) throws SQLException {
+
+        HunterNew hunterNew = new HunterNew();
+
+        if(resultSet.next()){
+            hunterNew.setHunterId(resultSet.getString("hunter_id"));
+            hunterNew.setName(resultSet.getString("name"));
+            hunterNew.setAgile(resultSet.getLong("agile"));
+
+            hunterNew.setCurLife(resultSet.getLong("cur_life"));
+            hunterNew.setDefend(resultSet.getLong("defend"));
+            hunterNew.setExp(resultSet.getLong("exp"));
+
+            hunterNew.setHideRate(resultSet.getLong("hide_rate"));
+            hunterNew.setLevel(resultSet.getLong("level"));
+
+            hunterNew.setMaxAttack(resultSet.getLong("max_attack"));
+            hunterNew.setMaxLife(resultSet.getLong("max_life"));
+            hunterNew.setMinAttack(resultSet.getLong("min_attack"));
+
+            hunterNew.setNeedExp(resultSet.getLong("need_exp"));
+        }
+
+        return hunterNew;
     }
 
 
@@ -131,25 +158,7 @@ public class HunterDao extends DBConnection {
 
             ResultSet  resultSet = pstmt.executeQuery();
 
-            if(resultSet.next()){
-                hunterNew.setHunterId(resultSet.getString("hunter_id"));
-                hunterNew.setName(resultSet.getString("name"));
-                hunterNew.setAgile(resultSet.getLong("agile"));
-
-                hunterNew.setCurLife(resultSet.getLong("cur_life"));
-                hunterNew.setDefend(resultSet.getLong("defend"));
-                hunterNew.setExp(resultSet.getLong("exp"));
-
-                hunterNew.setHideRate(resultSet.getLong("hide_rate"));
-                hunterNew.setLevel(resultSet.getLong("level"));
-
-                hunterNew.setMaxAttack(resultSet.getLong("max_attack"));
-                hunterNew.setMaxLife(resultSet.getLong("max_life"));
-                hunterNew.setMinAttack(resultSet.getLong("min_attack"));
-
-                hunterNew.setNeedExp(resultSet.getLong("need_exp"));
-            }
-
+            hunterNew =  gethunterNewInfo(resultSet);
 
         }catch (Exception e) {
             e.printStackTrace();
@@ -165,5 +174,39 @@ public class HunterDao extends DBConnection {
         return hunterNew;
     }
 
+
+    /**
+     * 根据hunterName查询
+     * @param hunterName
+     * @return
+     */
+    public HunterNew getHunterByName(String hunterName){
+
+        HunterNew hunterNew = new HunterNew();
+
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            con = getConnection(USERNAMR, PASSWORD,URL);
+            pstmt = con.prepareStatement(" select * from  hunter_info where name like '%"+hunterName+"%'");
+
+            ResultSet  resultSet = pstmt.executeQuery();
+
+            hunterNew =  gethunterNewInfo(resultSet);
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(con!=null) con.close();
+                if(pstmt!=null) pstmt.close();
+                if(rs!=null) rs.close();
+            }catch (Exception e){
+
+            }
+        }
+        return hunterNew;
+    }
 
 }

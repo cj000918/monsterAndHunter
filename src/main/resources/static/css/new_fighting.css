@@ -56,9 +56,11 @@ input {
 
 .footer{
     width: 615px;
+	height: 417px;
     margin: 0 auto;
     padding-top: 5px;
     border: 3px solid rgba(15, 14, 15, 0.87);
+    overflow: hidden;
 }
 
 .footer_ul{
@@ -66,6 +68,8 @@ input {
 }
 
 .footer_li{
+    overflow:hidden;
+    line-height:30px;
     margin-bottom: 8px;
     padding-left: 5px;
 }
