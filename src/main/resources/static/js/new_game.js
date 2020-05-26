@@ -1,4 +1,4 @@
-
+var a = 0;
 
 //初始化,战斗信息滚动效果
 function marquee(){
@@ -27,6 +27,62 @@ function marquee(){
     }
 }
 
+//自动查询战斗信息__页面初始化时加载
+function autoGetFitghtingInfo() {
+
+    if(!$(".footer_ul").hasClass("do_get")){
+        return ;
+    }
+
+    var hunterId = $("#hunterName").attr("hunterId");
+
+    if(hunterId == undefined || hunterId == ""){
+        return ;
+    }
+
+    var pramater = {hunterId:hunterId};
+    setInterval(getFigthingInfo(pramater),8000);
+
+}
+
+//查询战斗信息
+function  getFigthingInfo(postData) {
+    $.ajax({
+        type: "get",
+        url: "/hunter/get_fighting",
+        data: postData,
+        dataType: 'json',
+        success: function (data) {
+
+            if(data != null && data.code != 300){
+
+                var fightsList = data.fights;
+
+                $.each(fightsList, function (index, value) {
+                    var createTime = value.createTime;
+                    var remark = value.remark;
+                    var hunterId = value.hunterId;
+                    var monsterId = value.monsterId;
+                    var id = value.id;
+
+                    var liDom = $('<li class ="footer_li">'+ createTime +'  ' +remark+'</li>')
+
+                    if($(".footer_li").length>0){
+
+                        $(".footer_li:last").after(liDom);
+
+                    }else{
+                        $(".footer_ul").append(liDom);
+                    }
+
+                })
+            }
+        }
+    })
+}
+
+
+
 
 
 $(function(){
@@ -51,8 +107,9 @@ $(function(){
 
         var hunterId = $("#hunterName").attr("hunterId");
         var parmater = {hunterId:hunterId};
-        setInterval(getFigthingInfo(parmater),3000);
+        // setInterval(getFigthingInfo(parmater),3000);
 
+        getFigthingInfo(parmater);
     })
 
 
@@ -77,7 +134,8 @@ $(function(){
 
                     $("#hunterName").attr("hunterId",hunterId);
 
-
+                    //增加标识，可以开始循环查询
+                    $(".footer_ul").addClass("do_get");
 
                 }
             }
@@ -86,41 +144,6 @@ $(function(){
 
 
 
-//查询战斗信息
-    function  getFigthingInfo(postData) {
-        $.ajax({
-            type: "get",
-            url: "/hunter/get_fighting",
-            data: postData,
-            dataType: 'json',
-            success: function (data) {
-
-                if(data != null && data.code != 300){
-
-                    var fightsList = data.fights;
-
-                    $.each(fightsList, function (index, value) {
-                        var createTime = value.createTime;
-                        var remark = value.remark;
-                        var hunterId = value.hunterId;
-                        var monsterId = value.monsterId;
-                        var id = value.id;
-
-                        var liDom = $('<li class ="footer_li">'+ createTime +'  ' +remark+'</li>')
-
-                        if($(".footer_li").length>0){
-
-                            $(".footer_li:last").after(liDom);
-
-                        }else{
-                            $(".footer_ul").append(liDom);
-                        }
-
-                    })
-                }
-            }
-        })
-    }
 
 
 })

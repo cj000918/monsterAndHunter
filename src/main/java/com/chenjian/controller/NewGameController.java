@@ -57,7 +57,7 @@ public class NewGameController {
 
 
     /**
-     * 创建猎人 第一版
+     * 创建猎人 第一版（暂停使用）
      * @return
      */
     @PostMapping("/add_hunter")
@@ -68,7 +68,7 @@ public class NewGameController {
      }
 
     /**
-     * 创建猎人 第二版（暂用此法）
+     * 创建猎人 第二版（暂停使用）
      * @return
      */
     @GetMapping("/add_hunter_2")
