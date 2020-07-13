@@ -12,12 +12,14 @@ import com.chenjian.entity.FightInfo;
 import com.chenjian.entity.HunterNew;
 import com.chenjian.entity.MonsterNew;
 import com.chenjian.job.FightWorker;
+import com.chenjian.mapper.HunterMapper;
 import com.chenjian.service.FightInfoService;
 import com.chenjian.util.JobUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 
@@ -31,6 +33,9 @@ public class FightServiceImpl implements FightInfoService {
 
     @Autowired
      private FightInfoDao fightInfoDao;
+
+    @Resource
+    private HunterMapper hunterMapper;
 
     @Override
     @Async
