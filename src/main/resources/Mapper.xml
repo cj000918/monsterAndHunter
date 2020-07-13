@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chenjian.mapper.HunterMapper">
+
+
+    <insert id="addHunterInfo" useGeneratedKeys="true">
+        insert into hunter_info (name,max_life,cur_life,max_attack,min_attack,defend,level,exp,need_exp,agile,hide_rate,hunter_id) values
+        (#{hunterNew.name},#{hunterNew.maxLife},#{hunterNew.curLife},#{hunterNew.maxAttack},#{hunterNew.minAttack},#{hunterNew.defend},
+        #{hunterNew.level},#{hunterNew.exp},#{hunterNew.needExp},#{hunterNew.agile},#{hunterNew.hideRate},#{hunterNew.hunterId})
+    </insert>
+
+    <select id="getHunterInfo" resultType="com.chenjian.entity.HunterNew">
+
+
+    </select>
+
+</mapper>
