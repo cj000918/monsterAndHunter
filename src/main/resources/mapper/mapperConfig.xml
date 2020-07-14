@@ -4,30 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <properties resource="application.properties"></properties>
     <settings>
         <setting name="logImpl" value="LOG4J" />
     </settings>
-
-    <typeAliases>
-        <package  name="com.chenjian.entity"/>
-    </typeAliases>
 
     <environments default="local">
         <environment id="local">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property  name="driver" value="${jdbc_driverClassName}"/>
                 <!-- mysql连接的依赖包是高版本的情况下,后面要加上具体的配置信息-->
-                <property name="url" value="jdbc:mysql://www.creedzwg.top/CJ_DB?useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
-                <property name="username" value="root"/>
-                <property name="password" value="agent123"/>
+                <property name="url" value="${jdbc_url}" />
+                <property name="username" value="${jdbc_username}"/>
+                <property name="password" value="${jdbc_password}"/>
             </dataSource>
         </environment>
     </environments>
-
-
     <mappers>
-        <mapper resource="Mapper.xml"/>
+        <mapper resource="mapper/fightingMapper.xml"/>
+        <package name="com.chenjian.mapper"/>
     </mappers>
 
 </configuration>

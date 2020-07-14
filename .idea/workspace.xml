@@ -2,7 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a7dd5f2-bd21-4484-8460-017cc50a5055" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_10_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mh.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/MhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/MhApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/mapper/HunterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/mapper/HunterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/HunterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/HunterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/fightingMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MapperConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/mapperConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/MhApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/MhApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/controller/NewGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/controller/NewGameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/FightInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/FightInfoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/HunterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/HunterDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/MonsterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/MonsterDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/FightInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/FightInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/GameStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/GameStart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Hunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Hunter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/HunterNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/HunterNew.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Monster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/MonsterNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/MonsterNew.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/RedisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Weapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/WeaponNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/WeaponNew.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterGradeEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterGradeEnums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterNameEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterNameEnums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterProfessionEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterProfessionEnums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponDescribeEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponDescribeEnums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponNameEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponNameEnums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/job/FightWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/job/FightWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/job/JobWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/job/JobWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/others/SpringContextHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/others/SpringContextHolder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/FightInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/FightInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/HunterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/HunterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/FightServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/FightServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/HunterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/HunterServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/MonsterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/MonsterServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/MonsterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/MonsterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/test/ThreadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/test/ThreadTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/CommonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/CommonUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/ConverUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/ConverUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/DateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/GameUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/GameUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/JobUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/JobUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/JsonUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/MonsterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/MonsterUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/RandomUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/RandomUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/RedisUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/RedisUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/SnowflakeIdWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/SnowflakeIdWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/StringUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/WeaponUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/WeaponUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/game.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/new_fighting.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/game.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/new_game.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/greeting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/new_fighting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/testScroll.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +178,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43218392" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -116,8 +189,24 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.chenjian.entity" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My_Code\monsterAndHunter\src\main\resources\mapper" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.SnowflakeIdWorker">
+  <component name="RunManager" selected="Application.MhApplication">
+    <configuration name="MhApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chenjian.MhApplication" />
+      <module name="mh" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chenjian.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SnowflakeIdWorker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.chenjian.util.SnowflakeIdWorker" />
       <module name="mh" />
@@ -154,14 +243,15 @@
     <list>
       <item itemvalue="Application.SnowflakeIdWorker" />
       <item itemvalue="Application.ThreadTest" />
+      <item itemvalue="Application.MhApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ThreadTest" />
+        <item itemvalue="Application.MhApplication" />
         <item itemvalue="Application.SnowflakeIdWorker" />
         <item itemvalue="Application.ThreadTest" />
-        <item itemvalue="Application.SnowflakeIdWorker" />
         <item itemvalue="Application.ThreadTest" />
+        <item itemvalue="Application.SnowflakeIdWorker" />
       </list>
     </recent_temporary>
   </component>
@@ -326,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594624490131</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="引入mybatis">
+      <created>1594630037289</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1594630037289</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -389,26 +486,74 @@
     <option name="LAST_COMMIT_MESSAGE" value="引入mybatis" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1594629862835">
+    <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594642715236">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1594629862835" />
+    <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1594642715236" />
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1594630035940">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1594630035940" />
+    <state x="14" y="55" key="DiffContextDialog" timestamp="1594630026070">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="14" y="55" key="DiffContextDialog/0.0.1360.728@0.0.1360.728" timestamp="1594630026070" />
     <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1592987004903">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592987004903" />
-    <state x="181" y="0" key="SettingsEditor" timestamp="1594623513588">
+    <state width="1317" height="405" key="GridCell.Tab.0.bottom" timestamp="1594708173638">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="181" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1594623513588" />
-    <state x="272" y="100" key="Vcs.Push.Dialog.v2" timestamp="1594629866498">
+    <state width="1317" height="405" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state width="1317" height="405" key="GridCell.Tab.0.center" timestamp="1594708173638">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="100" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1594629866498" />
-    <state x="360" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1592990165920">
+    <state width="1317" height="405" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state width="1317" height="405" key="GridCell.Tab.0.left" timestamp="1594708173638">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="360" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1592990165920" />
+    <state width="1317" height="405" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state width="1317" height="405" key="GridCell.Tab.0.right" timestamp="1594708173638">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="405" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state width="1317" height="405" key="GridCell.Tab.1.bottom" timestamp="1594708173639">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="405" key="GridCell.Tab.1.bottom/0.0.1360.728@0.0.1360.728" timestamp="1594708173639" />
+    <state width="1317" height="405" key="GridCell.Tab.1.center" timestamp="1594708173638">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="405" key="GridCell.Tab.1.center/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state width="1317" height="405" key="GridCell.Tab.1.left" timestamp="1594708173638">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="405" key="GridCell.Tab.1.left/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state width="1317" height="405" key="GridCell.Tab.1.right" timestamp="1594708173638">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="405" key="GridCell.Tab.1.right/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state x="210" y="19" key="Maven.ArtifactSearchDialog" timestamp="1594648009453">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="210" y="19" key="Maven.ArtifactSearchDialog/0.0.1360.728@0.0.1360.728" timestamp="1594648009453" />
+    <state x="181" y="0" key="SettingsEditor" timestamp="1594695331539">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="181" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1594695331539" />
+    <state width="515" height="446" key="SwitcherDM" timestamp="1594690444209">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="515" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1594690444209" />
+    <state x="272" y="100" key="Vcs.Push.Dialog.v2" timestamp="1594630040841">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="272" y="100" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1594630040841" />
+    <state x="360" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594631237847">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="360" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1594631237847" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
