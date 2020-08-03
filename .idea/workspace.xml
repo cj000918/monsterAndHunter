@@ -1,81 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a7dd5f2-bd21-4484-8460-017cc50a5055" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_10_RELEASE.xml" afterDir="false" />
+    <list default="true" id="0a7dd5f2-bd21-4484-8460-017cc50a5055" name="Default Changelist" comment="引入mybatis&#10;有BUG暂未解决:&#10; mapper.java文件注入失败">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_17_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_10_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_0_10_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mh.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/MhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/MhApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/FightInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/FightInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/HunterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/HunterDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/MonsterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/MonsterDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/FightInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/FightInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/HunterNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/HunterNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/MonsterNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/MonsterNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/job/JobWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/job/JobWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/mapper/HunterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/mapper/HunterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/FightInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/FightInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/HunterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/HunterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/FightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/FightServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/HunterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/HunterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/fightingMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MapperConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/mapperConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application_old.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/fightingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/fightingMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/mapperConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/mapperConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/redis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/redis_old.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/MhApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/MhApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/controller/GameController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/controller/NewGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/controller/NewGameController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/FightInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/FightInfoDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/HunterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/HunterDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/MonsterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/MonsterDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/DBConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/FightInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/FightInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/GameStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/GameStart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Hunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Hunter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/HunterNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/HunterNew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Monster.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/MonsterNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/MonsterNew.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Weapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/Weapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/WeaponNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/WeaponNew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterGradeEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterGradeEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterNameEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterNameEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterProfessionEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/MonsterProfessionEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponDescribeEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponDescribeEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponNameEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/enums/WeaponNameEnums.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/job/FightWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/job/FightWorker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/job/JobWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/job/JobWorker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/others/SpringContextHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/others/SpringContextHolder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/FightInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/FightInfoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/HunterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/HunterService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/FightServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/FightServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/HunterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/HunterServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/MonsterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/MonsterServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/MonsterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/MonsterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/test/ThreadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/test/ThreadTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/CommonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/CommonUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/ConverUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/ConverUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/DateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/GameUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/GameUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/JobUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/JobUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/JsonUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/MonsterUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/MonsterUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/RandomUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/RandomUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/RedisUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/RedisUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/SnowflakeIdWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/SnowflakeIdWorker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/StringUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/util/WeaponUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/util/WeaponUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/game.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/new_fighting.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/game.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/new_game.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/greeting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/new_fighting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/testScroll.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/redis.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +158,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43218392" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -423,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594630037289</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="引入mybatis&#10;有BUG暂未解决:&#10; mapper.java文件注入失败">
+      <created>1594708274503</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1594708274504</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -483,17 +471,26 @@
     <MESSAGE value="移除测试内容" />
     <MESSAGE value="优化页面以及JS" />
     <MESSAGE value="引入mybatis" />
-    <option name="LAST_COMMIT_MESSAGE" value="引入mybatis" />
+    <MESSAGE value="引入mybatis&#10;有BUG暂未解决:&#10; mapper.java文件注入失败" />
+    <option name="LAST_COMMIT_MESSAGE" value="引入mybatis&#10;有BUG暂未解决:&#10; mapper.java文件注入失败" />
   </component>
   <component name="WindowStateProjectService">
     <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594642715236">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1594642715236" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1594630035940">
+    <state x="485" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1596457520741">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1594630035940" />
+    <state x="485" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728@0.0.1360.728" timestamp="1596457520741" />
+    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1594708303009">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1594708303009" />
+    <state width="472" height="463" key="DebuggerActiveHint" timestamp="1596468349581">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="472" height="463" key="DebuggerActiveHint/0.0.1360.728@0.0.1360.728" timestamp="1596468349581" />
     <state x="14" y="55" key="DiffContextDialog" timestamp="1594630026070">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
@@ -502,86 +499,89 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592987004903" />
-    <state width="1317" height="405" key="GridCell.Tab.0.bottom" timestamp="1594708173638">
+    <state width="1317" height="444" key="GridCell.Tab.0.bottom" timestamp="1596470510933">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
-    <state width="1317" height="405" key="GridCell.Tab.0.center" timestamp="1594708173638">
+    <state width="1317" height="444" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
+    <state width="1317" height="444" key="GridCell.Tab.0.center" timestamp="1596470510933">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
-    <state width="1317" height="405" key="GridCell.Tab.0.left" timestamp="1594708173638">
+    <state width="1317" height="444" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
+    <state width="1317" height="444" key="GridCell.Tab.0.left" timestamp="1596470510932">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
-    <state width="1317" height="405" key="GridCell.Tab.0.right" timestamp="1594708173638">
+    <state width="1317" height="444" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1596470510932" />
+    <state width="1317" height="444" key="GridCell.Tab.0.right" timestamp="1596470510933">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
-    <state width="1317" height="405" key="GridCell.Tab.1.bottom" timestamp="1594708173639">
+    <state width="1317" height="444" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
+    <state width="1317" height="444" key="GridCell.Tab.1.bottom" timestamp="1596470510933">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.1.bottom/0.0.1360.728@0.0.1360.728" timestamp="1594708173639" />
-    <state width="1317" height="405" key="GridCell.Tab.1.center" timestamp="1594708173638">
+    <state width="1317" height="444" key="GridCell.Tab.1.bottom/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
+    <state width="1317" height="444" key="GridCell.Tab.1.center" timestamp="1596470510933">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.1.center/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
-    <state width="1317" height="405" key="GridCell.Tab.1.left" timestamp="1594708173638">
+    <state width="1317" height="444" key="GridCell.Tab.1.center/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
+    <state width="1317" height="444" key="GridCell.Tab.1.left" timestamp="1596470510933">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.1.left/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
-    <state width="1317" height="405" key="GridCell.Tab.1.right" timestamp="1594708173638">
+    <state width="1317" height="444" key="GridCell.Tab.1.left/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
+    <state width="1317" height="444" key="GridCell.Tab.1.right" timestamp="1596470510933">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="1317" height="405" key="GridCell.Tab.1.right/0.0.1360.728@0.0.1360.728" timestamp="1594708173638" />
+    <state width="1317" height="444" key="GridCell.Tab.1.right/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
     <state x="210" y="19" key="Maven.ArtifactSearchDialog" timestamp="1594648009453">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="210" y="19" key="Maven.ArtifactSearchDialog/0.0.1360.728@0.0.1360.728" timestamp="1594648009453" />
-    <state x="181" y="0" key="SettingsEditor" timestamp="1594695331539">
+    <state x="181" y="0" key="SettingsEditor" timestamp="1596467415395">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="181" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1594695331539" />
-    <state width="515" height="446" key="SwitcherDM" timestamp="1594690444209">
+    <state x="181" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1596467415395" />
+    <state width="515" height="446" key="SwitcherDM" timestamp="1596468507270">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state width="515" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1594690444209" />
-    <state x="272" y="100" key="Vcs.Push.Dialog.v2" timestamp="1594630040841">
+    <state width="515" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1596468507270" />
+    <state x="272" y="100" key="Vcs.Push.Dialog.v2" timestamp="1594708297397">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="100" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1594630040841" />
-    <state x="360" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1594631237847">
+    <state x="272" y="100" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1594708297397" />
+    <state x="360" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1596439308682">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="360" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1594631237847" />
+    <state x="360" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1596439308682" />
+    <state x="248" y="100" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596449955292">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="248" y="100" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1360.728@0.0.1360.728" timestamp="1596449955292" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596455549856">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1596455549856" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/job/FightWorker.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="69" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/FightServiceImpl.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/job/FightWorker.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="70" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/others/SpringContextHolder.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/job/FightWorker.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="71" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/job/FightWorker.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/job/FightWorker.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="73" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

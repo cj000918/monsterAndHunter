@@ -18,11 +18,11 @@ public class MonsterNew {
     private  Long minAttack;			//最小攻击力
     private  Long defend;         //防御力
     private  Long agile;          //敏捷
-    private Long hideRate;       //躲避率
+    private  Long hideRate;       //躲避率
     private  String name;		//名称
-    private String grade;		//级别
-    private String profession;  //职业
-    private  String monsterId;
+    private  String grade;		//级别
+    private  String profession;  //职业
+    private  Long monsterId;
 
     public MonsterNew(){}
 
@@ -42,7 +42,7 @@ public class MonsterNew {
     	
     	this.curLife = maxLife;
     	this.isLive = 0;//0 表示存活
-        this.monsterId = SnowflakeIdWorker.getSnowFlakeId()+"";
+        this.monsterId = SnowflakeIdWorker.getSnowFlakeId();
     }
 
 }

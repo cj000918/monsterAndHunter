@@ -1,14 +1,11 @@
 package com.chenjian.service.Impl;
 
-import com.chenjian.dao.HunterDao;
 import com.chenjian.entity.HunterNew;
 import com.chenjian.mapper.HunterMapper;
 import com.chenjian.service.HunterService;
 import com.chenjian.util.SnowflakeIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @ClassName HunterServiceImpl
@@ -26,23 +23,23 @@ public class HunterServiceImpl implements HunterService {
     private HunterMapper hunterMapper;
 
     @Override
-    public String addHunter(HunterNew hunterNew) {
+    public Long addHunter(HunterNew hunterNew) {
 
-        String DBResult = null;
+        Long DBResult = null;
 
         long snowFlake= SnowflakeIdWorker.getSnowFlakeId();
 
-        hunterNew.setHunterId(snowFlake+"");
+        hunterNew.setHunterId(snowFlake);
         long result  = hunterMapper.addHunterInfo(hunterNew);
 
         if(result > 0){
-            DBResult = snowFlake + "";
+            DBResult = snowFlake;
         }
         return DBResult;
     }
 
     @Override
-    public HunterNew getHunterNewById(String hunterId) {
+    public HunterNew getHunterNewById(Long hunterId) {
         return hunterMapper.getHunterInfo(hunterId);
     }
 

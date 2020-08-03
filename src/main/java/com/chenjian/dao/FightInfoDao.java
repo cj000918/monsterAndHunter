@@ -59,8 +59,8 @@ public class FightInfoDao extends DBConnection {
                     "values(" +
                     "?,?,?,?)"
             );
-            pstmt.setString(1, fightInfo.getHunterId());
-            pstmt.setString(2, fightInfo.getMonsterId());
+            pstmt.setLong(1, fightInfo.getHunterId());
+            pstmt.setLong(2, fightInfo.getMonsterId());
             pstmt.setString(3, fightInfo.getRemark());
             pstmt.setTimestamp(4, fightInfo.getCreateTime());
 
@@ -85,7 +85,7 @@ public class FightInfoDao extends DBConnection {
      * @param hunterId
      * @return
      */
-    public List<FightInfo> getFightInfoHunterId(String hunterId, Timestamp time){
+    public List<FightInfo> getFightInfoHunterId(Long hunterId, Timestamp time){
 
 
         List<FightInfo> fightInfoList = new ArrayList<>();
@@ -100,15 +100,15 @@ public class FightInfoDao extends DBConnection {
             con = getConnection(USERNAMR, PASSWORD,URL);
 //            pstmt = con.prepareStatement(" select * from  fight_info where hunter_id = ? and create_time > ?");
             pstmt = con.prepareStatement(" select * from  fight_info where hunter_id = ? ");
-            pstmt.setString(1, hunterId);
+            pstmt.setLong(1, hunterId);
 //            pstmt.setTimestamp(2, time);
 
             ResultSet  resultSet = pstmt.executeQuery();
 
             while(resultSet.next()){
                 FightInfo fightInfo = new FightInfo();
-                fightInfo.setHunterId(resultSet.getString("hunter_id"));
-                fightInfo.setMonsterId(resultSet.getString("monster_id"));
+                fightInfo.setHunterId(resultSet.getLong("hunter_id"));
+                fightInfo.setMonsterId(resultSet.getLong("monster_id"));
                 fightInfo.setRemark(resultSet.getString("remark"));
                 fightInfo.setCreateTime(resultSet.getTimestamp("create_time"));
                 fightInfo.setId(resultSet.getLong("id"));

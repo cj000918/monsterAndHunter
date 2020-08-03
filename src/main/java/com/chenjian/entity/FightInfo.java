@@ -10,6 +10,8 @@ package com.chenjian.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 
 /**
@@ -18,6 +20,7 @@ import java.sql.Timestamp;
  * @data: 2019-09-30 16:28
  **/
 @Data
+@Table(name = "fight_info")
 public class FightInfo {
 
 //  `id` int(255) NOT NULL AUTO_INCREMENT,
@@ -26,17 +29,25 @@ public class FightInfo {
 //  `remark` varchar(500) COLLATE utf8mb4_bin DEFAULT NULL,
 //  `create_time` timestamp NULL DEFAULT NULL,
 
+    @Column(name = "id")
     private Long id;
-    private String hunterId;
-    private String monsterId;
+
+    @Column(name = "hunter_id")
+    private Long hunterId;
+
+    @Column(name = "monster_id")
+    private Long monsterId;
+
+    @Column(name = "remark")
     private String remark;
 
     @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+    @Column(name = "create_time")
     private Timestamp createTime;
 
     public FightInfo(){}
 
-    public FightInfo(String hunterId, String monsterId, String remark, Timestamp createTime){
+    public FightInfo(Long hunterId, Long monsterId, String remark, Timestamp createTime){
 
         this.hunterId = hunterId;
         this.monsterId = monsterId;

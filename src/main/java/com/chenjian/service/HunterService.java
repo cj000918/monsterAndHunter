@@ -10,9 +10,9 @@ import com.chenjian.entity.HunterNew;
  **/
 public interface HunterService {
 
-    String addHunter(HunterNew hunterNew);
+    Long addHunter(HunterNew hunterNew);
 
-    HunterNew getHunterNewById(String hunterId);
+    HunterNew getHunterNewById(Long hunterId);
 
     HunterNew getHunterNewByName(String hunterName);
 

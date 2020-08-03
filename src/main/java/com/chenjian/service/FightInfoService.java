@@ -25,6 +25,8 @@ public interface FightInfoService {
 
         Long addFightInfo(FightInfo fightInfo);
 
-        List<FightInfo> getFightInfo(String hunterId);
+        List<FightInfo> getFightInfo(Long hunterId);
+
+        List<FightInfo> getFightInfoList(Long hunterId);
 
 }

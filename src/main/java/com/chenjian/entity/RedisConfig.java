@@ -14,7 +14,7 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-@PropertySource("classpath:redis.properties")
+@PropertySource("classpath:redis_old.properties")
 @Configuration
 public class RedisConfig {
 

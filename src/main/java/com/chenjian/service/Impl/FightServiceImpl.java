@@ -54,8 +54,13 @@ public class FightServiceImpl implements FightInfoService {
     }
 
     @Override
-    public List<FightInfo> getFightInfo(String hunterId) {
+    public List<FightInfo> getFightInfo(Long hunterId) {
         return fightInfoDao.getFightInfoHunterId(hunterId, null);
+    }
+
+    @Override
+    public List<FightInfo> getFightInfoList(Long hunterId) {
+        return null;
     }
 
 

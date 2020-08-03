@@ -13,7 +13,7 @@ import com.chenjian.entity.MonsterNew;
 import com.chenjian.service.FightInfoService;
 import com.chenjian.service.HunterService;
 import com.chenjian.service.MonsterService;
-import com.chenjian.util.CommonUtil;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -62,7 +62,7 @@ public class NewGameController {
      */
     @PostMapping("/add_hunter")
     @ResponseBody
-    public String addHuter(@RequestBody HunterNew hunterNew){
+    public Long addHuter(@RequestBody HunterNew hunterNew){
 
         return hunterService.addHunter(hunterNew);
      }
@@ -78,7 +78,7 @@ public class NewGameController {
         HunterNew hunterNew = new HunterNew();
         hunterNew.setName(hunterName);
 
-        String result =  hunterService.addHunter(hunterNew);
+        Long result =  hunterService.addHunter(hunterNew);
 
         Map<String, Object> map = new HashMap<>();
 
@@ -95,30 +95,30 @@ public class NewGameController {
      * @param hunterName
      * @return
      */
-    @GetMapping("/fight")
-    public Map<String, Object> doFight(String hunterName){
+    @GetMapping("/fight/{hunterName}")
+    public Map<String, Object> doFight(@PathVariable("hunterName") String hunterName){
 
         Map<String, Object> map = new HashMap<>();
 
-        HunterNew hunterNew = hunterService.getHunterNewByName(hunterName);
-
+        HunterNew oldHunterNew = hunterService.getHunterNewByName(hunterName);
+        HunterNew newHunterNew = new HunterNew();
         //判断当前名称对应的hunter是否存在，若存在则直接战斗
         //若不存在，则需要先添加hunter再进行战斗
-        if(hunterNew != null && hunterNew.getCurLife() > 0){
-            hunterNew.setIsLive(0);
+        if(oldHunterNew != null && oldHunterNew.getCurLife() > 0){
+            BeanUtils.copyProperties(oldHunterNew, newHunterNew);
         }else{
-            HunterNew hunter = new HunterNew();
-            hunter.setName(hunterName);
-            String addResult = hunterService.addHunter(hunter);
+            HunterNew hunter = new HunterNew(hunterName);
+            Long addResult = hunterService.addHunter(hunter);
             if(null != addResult && !"".equals(addResult)){
-                hunterNew = hunterService.getHunterNewById(addResult);
+                newHunterNew = hunterService.getHunterNewById(addResult);
             }
         }
-        MonsterNew monsterNew = monsterService.addMonsterByHunter(hunterNew);
-        String result = fightService.fightings(hunterNew, monsterNew);
+
+        MonsterNew monsterNew = monsterService.addMonsterByHunter(newHunterNew);
+        String result = fightService.fightings(newHunterNew, monsterNew);
 
         map.put("msg", result);
-        map.put("hunterId", hunterNew.getHunterId());
+        map.put("hunterId", newHunterNew.getHunterId());
         map.put("code", 100);
 
         return map;
@@ -129,10 +129,10 @@ public class NewGameController {
      * @param hunterName
      * @return
      */
-    @GetMapping("/hunterId")
-    public String getHunterId(String hunterName){
+    @GetMapping("/hunterId/{hunterName}")
+    public Long getHunterId(@PathVariable("hunterName") String hunterName){
 
-        String hunterId = "";
+        Long hunterId = null;
 
         HunterNew hunterNew = hunterService.getHunterNewByName(hunterName);
 
@@ -150,8 +150,8 @@ public class NewGameController {
      * @param hunterId
      * @return
      */
-    @GetMapping("/get_fighting")
-    public Map<String, Object> getFightingInfo(String hunterId){
+    @GetMapping("/getFighting/{hunterId}")
+    public Map<String, Object> getFightingInfo(@PathVariable("hunterId") Long hunterId){
 
         Map<String, Object> map = new HashMap<>();
 

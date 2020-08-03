@@ -69,7 +69,7 @@ public class HunterDao extends DBConnection {
         HunterNew hunterNew = new HunterNew();
 
         if(resultSet.next()){
-            hunterNew.setHunterId(resultSet.getString("hunter_id"));
+            hunterNew.setHunterId(resultSet.getLong("hunter_id"));
             hunterNew.setName(resultSet.getString("name"));
             hunterNew.setAgile(resultSet.getLong("agile"));
 
@@ -121,7 +121,7 @@ public class HunterDao extends DBConnection {
             pstmt.setLong(9, hunter.getNeedExp());
             pstmt.setLong(10, hunter.getAgile());
             pstmt.setLong(11, hunter.getHideRate());
-            pstmt.setString(12, hunter.getHunterId());
+            pstmt.setLong(12, hunter.getHunterId());
 
             result = pstmt.executeUpdate();
 

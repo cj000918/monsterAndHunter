@@ -51,7 +51,7 @@ public class MonsterDao extends DBConnection {
                     "values(" +
                     "?,?,?,?,?,?,?,?,?,?,?)"
             );
-            pstmt.setString(1, monsterNew.getMonsterId());
+            pstmt.setLong(1, monsterNew.getMonsterId());
             pstmt.setString(2, monsterNew.getName());
             pstmt.setString(3, monsterNew.getGrade());
             pstmt.setString(4, monsterNew.getProfession());
@@ -99,7 +99,7 @@ public class MonsterDao extends DBConnection {
             ResultSet  resultSet = pstmt.executeQuery();
 
             if(resultSet.next()){
-                monsterNew.setMonsterId(resultSet.getString("monster_id"));
+                monsterNew.setMonsterId(resultSet.getLong("monster_id"));
                 monsterNew.setName(resultSet.getString("name"));
                 monsterNew.setAgile(resultSet.getLong("agile"));
 
