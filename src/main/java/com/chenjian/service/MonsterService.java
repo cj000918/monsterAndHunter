@@ -7,8 +7,8 @@
  */
 package com.chenjian.service;
 
-import com.chenjian.entity.HunterNew;
-import com.chenjian.entity.MonsterNew;
+import com.chenjian.entity.base.HunterNew;
+import com.chenjian.entity.base.MonsterNew;
 
 /**
  * @author: ChenJian

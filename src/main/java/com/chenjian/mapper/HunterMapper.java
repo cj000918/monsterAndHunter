@@ -1,10 +1,9 @@
 package com.chenjian.mapper;
 
-import com.chenjian.entity.FightInfo;
-import com.chenjian.entity.HunterNew;
+import com.chenjian.entity.base.FightInfo;
+import com.chenjian.entity.base.HunterNew;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

@@ -44,7 +44,7 @@ public abstract class JobWorker implements Runnable {
 
             Map<String, String> msg = work(data);
 
-            logger.info("=======TIME_CONSUMING : " + (System.currentTimeMillis() - s) + " mills=======");
+            logger.info("===TIME_CONSUMING : " + (System.currentTimeMillis() - s) + " mills===");
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }

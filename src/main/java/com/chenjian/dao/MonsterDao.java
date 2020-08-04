@@ -7,8 +7,8 @@
  */
 package com.chenjian.dao;
 
-import com.chenjian.entity.DBConnection;
-import com.chenjian.entity.MonsterNew;
+import com.chenjian.entity.base.DBConnection;
+import com.chenjian.entity.base.MonsterNew;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

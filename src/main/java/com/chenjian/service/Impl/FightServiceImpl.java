@@ -8,9 +8,9 @@
 package com.chenjian.service.Impl;
 
 import com.chenjian.dao.FightInfoDao;
-import com.chenjian.entity.FightInfo;
-import com.chenjian.entity.HunterNew;
-import com.chenjian.entity.MonsterNew;
+import com.chenjian.entity.base.FightInfo;
+import com.chenjian.entity.base.HunterNew;
+import com.chenjian.entity.base.MonsterNew;
 import com.chenjian.job.FightWorker;
 import com.chenjian.mapper.HunterMapper;
 import com.chenjian.service.FightInfoService;

@@ -8,11 +8,9 @@
 package com.chenjian.service.Impl;
 
 import com.chenjian.dao.MonsterDao;
-import com.chenjian.entity.Hunter;
-import com.chenjian.entity.HunterNew;
-import com.chenjian.entity.MonsterNew;
+import com.chenjian.entity.base.HunterNew;
+import com.chenjian.entity.base.MonsterNew;
 import com.chenjian.service.MonsterService;
-import com.chenjian.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

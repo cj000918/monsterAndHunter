@@ -1,4 +1,4 @@
-package com.chenjian.entity;
+package com.chenjian.entity.base;
 
 import com.chenjian.util.RedisUtil;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;

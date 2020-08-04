@@ -1,4 +1,4 @@
-package com.chenjian.entity;
+package com.chenjian.entity.base;
 
 
 import com.chenjian.util.DateUtil;
@@ -7,7 +7,6 @@ import com.chenjian.util.MonsterUtil;
 import com.chenjian.util.RedisUtil;
 
 import java.io.Serializable;
-import java.util.Date;
 
 
 public class Monster implements Serializable {

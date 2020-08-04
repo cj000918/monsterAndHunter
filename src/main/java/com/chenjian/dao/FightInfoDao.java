@@ -7,9 +7,8 @@
  */
 package com.chenjian.dao;
 
-import com.chenjian.entity.DBConnection;
-import com.chenjian.entity.FightInfo;
-import com.chenjian.entity.HunterNew;
+import com.chenjian.entity.base.DBConnection;
+import com.chenjian.entity.base.FightInfo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +17,6 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.chenjian.entity.DBConnection.getConnection;
 
 
 /**

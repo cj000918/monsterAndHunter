@@ -1,6 +1,6 @@
 package com.chenjian.service.Impl;
 
-import com.chenjian.entity.HunterNew;
+import com.chenjian.entity.base.HunterNew;
 import com.chenjian.mapper.HunterMapper;
 import com.chenjian.service.HunterService;
 import com.chenjian.util.SnowflakeIdWorker;

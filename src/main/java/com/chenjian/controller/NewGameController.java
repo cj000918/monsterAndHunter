@@ -7,14 +7,18 @@
  */
 package com.chenjian.controller;
 
-import com.chenjian.entity.FightInfo;
-import com.chenjian.entity.HunterNew;
-import com.chenjian.entity.MonsterNew;
+import com.chenjian.entity.base.FightInfo;
+import com.chenjian.entity.base.HunterNew;
+import com.chenjian.entity.base.MonsterNew;
+import com.chenjian.entity.response.RestResponse;
+import com.chenjian.enums.BizExceptionCode;
+import com.chenjian.exception.BizException;
 import com.chenjian.service.FightInfoService;
 import com.chenjian.service.HunterService;
 import com.chenjian.service.MonsterService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -96,12 +100,17 @@ public class NewGameController {
      * @return
      */
     @GetMapping("/fight/{hunterName}")
-    public Map<String, Object> doFight(@PathVariable("hunterName") String hunterName){
+    @ResponseBody
+    public RestResponse<Map<String, Object>> doFight(@PathVariable("hunterName") String hunterName){
+
+        if(ObjectUtils.isEmpty(hunterName)){
+            throw new BizException(BizExceptionCode.PARAMETER_MISSING.getCode(), BizExceptionCode.PARAMETER_MISSING.getMsg());
+        }
 
         Map<String, Object> map = new HashMap<>();
-
         HunterNew oldHunterNew = hunterService.getHunterNewByName(hunterName);
         HunterNew newHunterNew = new HunterNew();
+
         //判断当前名称对应的hunter是否存在，若存在则直接战斗
         //若不存在，则需要先添加hunter再进行战斗
         if(oldHunterNew != null && oldHunterNew.getCurLife() > 0){
@@ -121,7 +130,7 @@ public class NewGameController {
         map.put("hunterId", newHunterNew.getHunterId());
         map.put("code", 100);
 
-        return map;
+        return new RestResponse<>(map);
     }
 
     /**

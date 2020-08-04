@@ -1,10 +1,8 @@
-package com.chenjian.entity;
+package com.chenjian.entity.base;
 
 
 import com.chenjian.util.*;
 import lombok.Data;
-
-import java.io.Serializable;
 
 
 @Data

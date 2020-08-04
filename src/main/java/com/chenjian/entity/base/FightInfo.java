@@ -5,7 +5,7 @@
  * date: 2019-09-30 16:28
  * copyright(c) 2019 http://www.hydee.cn/ Inc. All rights reserved.
  */
-package com.chenjian.entity;
+package com.chenjian.entity.base;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

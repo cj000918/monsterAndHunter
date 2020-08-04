@@ -1,14 +1,12 @@
-package com.chenjian.entity;
+package com.chenjian.entity.base;
 
 
 import com.chenjian.enums.MonsterGradeEnums;
 import com.chenjian.util.DateUtil;
 import com.chenjian.util.GameUtil;
-import com.chenjian.util.JsonUtil;
 import com.chenjian.util.RedisUtil;
 
 import java.io.Serializable;
-import java.util.Date;
 
 
 public class Hunter implements Serializable {

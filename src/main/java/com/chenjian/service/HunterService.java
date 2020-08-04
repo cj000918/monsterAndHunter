@@ -1,6 +1,6 @@
 package com.chenjian.service;
 
-import com.chenjian.entity.HunterNew;
+import com.chenjian.entity.base.HunterNew;
 
 /**
  * @ClassName HunterService

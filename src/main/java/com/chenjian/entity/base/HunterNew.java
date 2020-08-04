@@ -5,7 +5,7 @@
  * date: 2019-08-30 18:47
  * copyright(c) 2019 http://www.hydee.cn/ Inc. All rights reserved.
  */
-package com.chenjian.entity;
+package com.chenjian.entity.base;
 
 import lombok.Data;
 

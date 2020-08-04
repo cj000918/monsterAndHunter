@@ -1,4 +1,4 @@
-package com.chenjian.entity;
+package com.chenjian.entity.base;
 
 import java.io.Serializable;
 import java.util.ArrayList;

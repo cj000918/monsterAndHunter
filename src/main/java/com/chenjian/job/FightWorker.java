@@ -7,9 +7,9 @@
  */
 package com.chenjian.job;
 
-import com.chenjian.entity.FightInfo;
-import com.chenjian.entity.HunterNew;
-import com.chenjian.entity.MonsterNew;
+import com.chenjian.entity.base.FightInfo;
+import com.chenjian.entity.base.HunterNew;
+import com.chenjian.entity.base.MonsterNew;
 import com.chenjian.enums.MonsterGradeEnums;
 import com.chenjian.others.SpringContextHolder;
 import com.chenjian.service.FightInfoService;
