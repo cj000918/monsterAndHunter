@@ -7,6 +7,8 @@ import com.chenjian.util.SnowflakeIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * @ClassName HunterServiceImpl
  * @Description
@@ -19,7 +21,7 @@ public class HunterServiceImpl implements HunterService {
 //    @Autowired
 //    private HunterDao hunterDao;
 
-    @Autowired
+    @Resource
     private HunterMapper hunterMapper;
 
     @Override
@@ -74,6 +76,7 @@ public class HunterServiceImpl implements HunterService {
      * 增加经验
      * @param exp
      */
+    @Override
     public void expAdd(HunterNew hunterNew, long exp){
 
         //存活的hunter才需要计算经验
