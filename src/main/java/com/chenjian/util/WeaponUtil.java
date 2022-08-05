@@ -88,11 +88,4 @@ public class WeaponUtil {
 		}
     	return maxAggressivity;
     }
-   
-    public static void main(String[] args) {
-		
-    	String name = randomaWeaponName();
-    	
-    	System.out.println(name);
-	}
 }

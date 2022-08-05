@@ -39,9 +39,7 @@ function autoGetFitghtingInfo() {
     if(hunterId == undefined || hunterId == ""){
         return ;
     }
-
-    var pramater = {hunterId:hunterId};
-    setInterval(getFigthingInfo(pramater),8000);
+    setInterval(getFigthingInfo(hunterId),8000);
 
 }
 
@@ -49,8 +47,7 @@ function autoGetFitghtingInfo() {
 function  getFigthingInfo(postData) {
     $.ajax({
         type: "get",
-        url: "/hunter/get_fighting",
-        data: postData,
+        url: "/hunter/getFighting/"+postData,
         dataType: 'json',
         success: function (data) {
 
@@ -92,24 +89,23 @@ $(function(){
 
         var hunterName = $("#hunterName").val();
 
-        if(hunterName == undefined){
+        if(hunterName == undefined || hunterName == ''){
             alert("请输入名称");
+            return;
         }
-        var postData = {hunterName : hunterName};
-
+//        var postData = {hunterName};
         //开始战斗
-        doFighting(postData);
+        doFighting(hunterName);
 
     });
 
     //查询战斗信息
     $(".operation_query_but").click(function () {
-
         var hunterId = $("#hunterName").attr("hunterId");
-        var parmater = {hunterId:hunterId};
-        // setInterval(getFigthingInfo(parmater),3000);
-
-        getFigthingInfo(parmater);
+        if(hunterId == undefined || hunterId == ""){
+            return ;
+        }
+        getFigthingInfo(hunterId);
     })
 
 
@@ -117,16 +113,13 @@ $(function(){
     function doFighting(postData) {
         $.ajax({
             type: "get",
-            url: "/hunter/fight",
-            data: postData,
+            url: "/hunter/fight/" + postData,
             dataType: 'json',
             success: function (data) {
 
                 if(data != null){
 
-                    var hunterId = data.hunterId;
-                    var postData = {hunterId:hunterId};
-
+                    var hunterId = data.data.hunterId.toString();
                     //输入框不可编辑
                     $("#hunterName").attr("disabled","disabled");
                     //隐藏"开始战斗"按钮

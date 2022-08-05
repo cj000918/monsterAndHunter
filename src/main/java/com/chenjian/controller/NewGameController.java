@@ -10,12 +10,14 @@ package com.chenjian.controller;
 import com.chenjian.entity.base.FightInfo;
 import com.chenjian.entity.base.HunterNew;
 import com.chenjian.entity.base.MonsterNew;
+import com.chenjian.entity.base.WeaponNew;
 import com.chenjian.entity.response.RestResponse;
 import com.chenjian.enums.BizExceptionCode;
 import com.chenjian.exception.BizException;
 import com.chenjian.service.FightInfoService;
 import com.chenjian.service.HunterService;
 import com.chenjian.service.MonsterService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ObjectUtils;
@@ -117,6 +119,8 @@ public class NewGameController {
             BeanUtils.copyProperties(oldHunterNew, newHunterNew);
         }else{
             HunterNew hunter = new HunterNew(hunterName);
+            WeaponNew weaponNew = new WeaponNew();
+            weaponNew.showWeaponInfo();
             Long addResult = hunterService.addHunter(hunter);
             if(null != addResult && !"".equals(addResult)){
                 newHunterNew = hunterService.getHunterNewById(addResult);
@@ -127,7 +131,7 @@ public class NewGameController {
         String result = fightService.fightings(newHunterNew, monsterNew);
 
         map.put("msg", result);
-        map.put("hunterId", newHunterNew.getHunterId());
+        map.put("hunterId", newHunterNew.getHunterId().toString());
         map.put("code", 100);
 
         return new RestResponse<>(map);
@@ -160,18 +164,17 @@ public class NewGameController {
      * @return
      */
     @GetMapping("/getFighting/{hunterId}")
-    public Map<String, Object> getFightingInfo(@PathVariable("hunterId") Long hunterId){
+    public Map<String, Object> getFightingInfo(@PathVariable("hunterId") String hunterId){
 
         Map<String, Object> map = new HashMap<>();
 
         map.put("msg","");
         map.put("code", 300);
 
-        if(null == hunterId || "".equals(hunterId)){
+        if(StringUtils.isBlank(hunterId)){
             return map;
         }
-
-        List<FightInfo> fightInfoList =  fightService.getFightInfo(hunterId);
+        List<FightInfo> fightInfoList =  fightService.getFightInfo(Long.parseLong(hunterId));
 
 
         map.put("fights", fightInfoList);

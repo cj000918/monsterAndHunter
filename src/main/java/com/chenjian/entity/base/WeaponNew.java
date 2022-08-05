@@ -37,5 +37,10 @@ public class WeaponNew {
         this.maxAggressivity = WeaponUtil.getMaxAggressivity(weaponDescribe, minAggressivity);
     }
 
+    public void showWeaponInfo(){
+        System.out.println("获得武器: "+weaponDescribe + weaponName+"\n");
+        System.out.println("武器属性: "+"\n");
+        System.out.println("攻击力: "+minAggressivity+"-" + maxAggressivity+"\n");
 
+    }
 }

@@ -67,14 +67,7 @@ public class GameUtil {
         }
         return rel;
     }
- 
-    
-    public static void main(String[] args) {
-		
-    	getHunterName();
 
-	}
-    
     
     public static String getHunterName(){
     	
