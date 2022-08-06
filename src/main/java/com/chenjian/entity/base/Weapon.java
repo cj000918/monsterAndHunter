@@ -3,7 +3,6 @@ package com.chenjian.entity.base;
 
 import com.chenjian.util.RedisUtil;
 import com.chenjian.util.WeaponUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 
@@ -59,14 +58,14 @@ public class Weapon implements Serializable {
 	 * 初始化武器属性
 	 */
 	public Weapon(){
-			
-			this.weaponName = WeaponUtil.randomaWeaponName();
-			
-			this.weaponDescribe = WeaponUtil.randomaWeaponDescribeName(weaponName);
-			
-			this.minAggressivity = WeaponUtil.getMinAggressivity(weaponDescribe);
-			
-			this.maxAggressivity = WeaponUtil.getMaxAggressivity(weaponDescribe, minAggressivity);
+
+		this.weaponName = WeaponUtil.randomWeaponName();
+
+		this.weaponDescribe = WeaponUtil.randomWeaponDescribeName(weaponName);
+
+		this.minAggressivity = WeaponUtil.getMinAggressivity(weaponDescribe);
+
+		this.maxAggressivity = WeaponUtil.getMaxAggressivity(weaponDescribe, minAggressivity);
 	}
 
 	

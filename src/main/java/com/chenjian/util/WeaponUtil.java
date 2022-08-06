@@ -2,40 +2,38 @@ package com.chenjian.util;
 
 import com.chenjian.enums.WeaponDescribeEnums;
 import com.chenjian.enums.WeaponNameEnums;
+import com.chenjian.enums.base.IEnum;
 
 public class WeaponUtil {
 
- 
+
 	/**
 	 * 随机获取武器名称
+	 *
 	 * @return
 	 */
-    public static String randomaWeaponName(){
-    	
-    	int weaponNameResult = (int)(Math.random() * WeaponNameEnums.values().length);
-    	
-    	String weaponName = WeaponNameEnums.getShowNameByValue(weaponNameResult);
-    	
-    	return weaponName;
-    }
-	
-    /**
-     * 随机获取武器品质
-     * @param weaponName
-     * @return
-     */
-    public static String randomaWeaponDescribeName(String weaponName){
-    	
-    	String weaponDescribe = "";
-    	
-    	if( ! weaponName.equals("未知")){
-    		
-        	int weaponDescribeResult = (int)(Math.random() * WeaponDescribeEnums.values().length);
-        	  
-        	weaponDescribe = WeaponDescribeEnums.getShowNameByValue(weaponDescribeResult);
-    	}
-    	
-    	return weaponDescribe;
+	public static String randomWeaponName() {
+
+		int weaponNameResult = (int) (Math.random() * WeaponNameEnums.values().length);
+		return IEnum.getShowName(weaponNameResult, WeaponNameEnums.class);
+
+	}
+
+	/**
+	 * 随机获取武器品质
+	 *
+	 * @param weaponName
+	 * @return
+	 */
+	public static String randomWeaponDescribeName(String weaponName) {
+
+		String weaponDescribe = "";
+		if (!weaponName.equals("未知")) {
+			int weaponDescribeResult = (int) (Math.random() * WeaponDescribeEnums.values().length);
+			weaponDescribe = IEnum.getShowName(weaponDescribeResult, WeaponDescribeEnums.class);
+		}
+
+		return weaponDescribe;
     }
     
     /**

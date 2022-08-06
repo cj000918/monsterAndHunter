@@ -4,6 +4,7 @@ package com.chenjian.util;
 import com.chenjian.enums.MonsterGradeEnums;
 import com.chenjian.enums.MonsterNameEnums;
 import com.chenjian.enums.MonsterProfessionEnums;
+import com.chenjian.enums.base.IEnum;
 
 public class MonsterUtil {
 	
@@ -17,20 +18,18 @@ public class MonsterUtil {
 		if(hunterLevel < 5){
 			
 			hunterLevel = 5;
-		}else{
+		} else {
 			hunterLevel = MonsterNameEnums.values().length;
 		}
-		
-    	int monsterNameResult = (int)(Math.random() * hunterLevel);
-    	
-    	if(monsterNameResult < 1){
-    		
-    		monsterNameResult = 1;
-    	}
-    	
-    	String monsterName = MonsterNameEnums.getShowNameByValue(monsterNameResult);
-    	
-    	return monsterName;
+
+		int monsterNameResult = (int) (Math.random() * hunterLevel);
+
+		if (monsterNameResult < 1) {
+
+			monsterNameResult = 1;
+		}
+
+		return IEnum.getShowName(monsterNameResult, MonsterNameEnums.class);
 	}
 	
 	/**
@@ -42,21 +41,17 @@ public class MonsterUtil {
 		if(hunterLevel < 5){
 			
 			hunterLevel = 5;
-		}else{
+		} else {
 			hunterLevel = MonsterGradeEnums.values().length;
 		}
-		
-    	int monsterGradeResult = (int)(Math.random() * hunterLevel);
-    	
-    	if(monsterGradeResult < 1){
-    		
-    		monsterGradeResult = 1;
-    	}
-    	
-    	String monsterGrade = MonsterGradeEnums.getShowNameByValue(monsterGradeResult);
-    	
-    	return monsterGrade;
-		
+
+		int monsterGradeResult = (int) (Math.random() * hunterLevel);
+
+		if (monsterGradeResult < 1) {
+
+			monsterGradeResult = 1;
+		}
+		return IEnum.getShowName(monsterGradeResult, MonsterGradeEnums.class);
 	}
 	
 	/**
@@ -68,20 +63,17 @@ public class MonsterUtil {
 		if(hunterLevel < 5){
 			
 			hunterLevel = 5;
-		}else{
+		} else {
 			hunterLevel = MonsterProfessionEnums.values().length;
 		}
-		
-    	int monsterProfessionResult = (int)(Math.random() * hunterLevel);
-    	
-    	if(monsterProfessionResult < 1){
-    		
-    		monsterProfessionResult = 1;
-    	}
-    	
-    	String monsterProfession = MonsterProfessionEnums.getShowNameByValue(monsterProfessionResult);
-    	
-    	return monsterProfession;
+
+		int monsterProfessionResult = (int) (Math.random() * hunterLevel);
+
+		if (monsterProfessionResult < 1) {
+
+			monsterProfessionResult = 1;
+		}
+		return IEnum.getShowName(monsterProfessionResult, MonsterProfessionEnums.class);
 	}
 	
 	
@@ -198,11 +190,12 @@ public class MonsterUtil {
 		
 		return minAttack;
 	}
-	
+
 	/**
 	 * 获取怪物防御力
 	 * 当前设定, 敏捷:防御 = 3:1
-	 * @param monsterGrade
+	 *
+	 * @param agile
 	 * @return
 	 */
 	public static long getDefend(long agile){
@@ -276,10 +269,10 @@ public class MonsterUtil {
 		
 		return agile;
 	}
-	
+
 	/**
 	 * 获取怪物闪避率
-	 * @param monsterGrade
+	 * @param hunterHideRate
 	 * @return
 	 */
 	public static long getHideRate(long hunterHideRate){

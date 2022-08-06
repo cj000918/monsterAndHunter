@@ -28,9 +28,9 @@ public class WeaponNew {
      */
     public WeaponNew(){
 
-        this.weaponName = WeaponUtil.randomaWeaponName();
+        this.weaponName = WeaponUtil.randomWeaponName();
 
-        this.weaponDescribe = WeaponUtil.randomaWeaponDescribeName(weaponName);
+        this.weaponDescribe = WeaponUtil.randomWeaponDescribeName(weaponName);
 
         this.minAggressivity = WeaponUtil.getMinAggressivity(weaponDescribe);
 

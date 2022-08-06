@@ -16,14 +16,8 @@ public class RestResponse<T>  {
     private String resultCode;
     private String resultMsg;
     private T data;
-    /** @deprecated */
-    @Deprecated
-    public static final RestResponse SUCCESS = new RestResponse();
+
     public static final RestResponse<String> SUCCEED = new RestResponse("0", "success");
-    /** @deprecated */
-    @Deprecated
-    public static final RestResponse FAIL = new RestResponse("100000", "fail");
-    public static final RestResponse<String> FAILED = new RestResponse("100000", "fail");
     public static final RestResponse<Void> VOID = new RestResponse((Object)null);
     public static final RestResponse<Boolean> TRUE;
     public static final RestResponse<Boolean> FALSE;
