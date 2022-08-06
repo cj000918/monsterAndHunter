@@ -16,7 +16,6 @@ public class WeaponUtil {
 
 		int weaponNameResult = (int) (Math.random() * WeaponNameEnums.values().length);
 		return IEnum.getShowName(weaponNameResult, WeaponNameEnums.class);
-
 	}
 
 	/**
