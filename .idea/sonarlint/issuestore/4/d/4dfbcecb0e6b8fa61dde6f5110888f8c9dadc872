@@ -1,0 +1,33 @@
+
+ƒ
+java:S1319&"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(œï­÷
+k
+java:S2095œ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÑªØ•üÿÿÿÿ
+e
+java:S2095."OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†êÕÆ
+e
+java:S2095l"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(æğ”¸
+f
+java:S2095À"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(û“ºé
+`
+java:S2583Ì"DChange this condition so that it does not always evaluate to "false"(æÕÀÃøÿÿÿÿ
+`
+java:S2583†"DChange this condition so that it does not always evaluate to "false"(æÕÀÃøÿÿÿÿ
+`
+java:S2583©"DChange this condition so that it does not always evaluate to "false"(æÕÀÃøÿÿÿÿ
+h	java:S116"SRename this field "USERNAMR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ÔâÜ
+h	java:S116 "SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À‚û–
+c	java:S116#"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºë½Ñ
+Q
+java:S2696,"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+C	java:S1081")Either remove or fill this block of code.(íôÚÇşÿÿÿÿ
+>	java:S108;")Either remove or fill this block of code.(”ı¾
+Q
+java:S2696k"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+?	java:S108‡")Either remove or fill this block of code.(”ı¾
+R
+java:S2696›"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+?	java:S108ª")Either remove or fill this block of code.(”ı¾
+R
+java:S2696¿"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+?	java:S108Í")Either remove or fill this block of code.(”ı¾

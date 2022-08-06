@@ -1,0 +1,20 @@
+
+Q
+java:S2696a"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+h	java:S116"SRename this field "USERNAMR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ÔâÜ
+V	java:S125e"<This block of commented-out lines of code should be removed.(ÙÅ¯½ûÿÿÿÿ
+_
+java:S2583y"DChange this condition so that it does not always evaluate to "false"(æÕÀÃøÿÿÿÿ
+Q
+java:S26965"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+_
+java:S2583H"DChange this condition so that it does not always evaluate to "false"(æÕÀÃøÿÿÿÿ
+h	java:S116""SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À‚û–
+>	java:S108I")Either remove or fill this block of code.(”ı¾
+Q	java:S125b"<This block of commented-out lines of code should be removed.(¹—ö˜
+>	java:S108z")Either remove or fill this block of code.(”ı¾
+c	java:S116%"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºë½Ñ
+d
+java:S20956"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉŞ‹S
+j
+java:S2095c"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(í¶¬ıÿÿÿÿ

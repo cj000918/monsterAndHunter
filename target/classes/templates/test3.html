@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表之无限滚动</title>
+    <style>
+        #rule{
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+<div id="rule">
+    <div class="list" id="list">
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+        <p>用户185****0000 获得XXX优惠券</p>
+    </div>
+    <div class="list2" id="list2"></div>
+</div>
+<script>
+    (function(){
+        var speed = 10;//数字越大越慢
+        var list = document.getElementById('list');
+        // var list2 = document.getElementById('list2');
+        var rule = document.getElementById('rule');
+        // list2.innerHTML = list.innerHTML;
+        function Marquee() {
+            if (list.offsetHeight - rule.scrollTop <= 0)
+                rule.scrollTop -= list.offsetHeight;
+            else {
+                rule.scrollTop++;
+            }
+        }
+        var MyMar = setInterval(Marquee, speed);
+        rule.addEventListener('mouseover',function () {
+            clearInterval(MyMar)
+        });
+        rule.addEventListener ('mouseout',function () {
+            MyMar = setInterval(Marquee, speed)
+        });
+    })();
+
+</script>
+</body>
+
+</html>

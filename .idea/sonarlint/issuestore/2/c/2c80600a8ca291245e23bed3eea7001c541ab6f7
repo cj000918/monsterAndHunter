@@ -1,0 +1,10 @@
+
+S	java:S106D"9Replace this use of System.out or System.err by a logger.(ıÉ’øÿÿÿÿ
+J
+java:S1066U"/Merge this if statement with the enclosing one.(²†íüÿÿÿÿ
+S	java:S106;"9Replace this use of System.out or System.err by a logger.(éö±Íüÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(¡˜¥ûÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ­ŞÆ
+N	java:S106y"9Replace this use of System.out or System.err by a logger.(¸×©È
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ûìƒ›şÿÿÿÿ
+N	java:S106x"9Replace this use of System.out or System.err by a logger.(»º¿‘

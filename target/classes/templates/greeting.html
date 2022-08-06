@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>MonsterAndHunter</title>
+    <meta name="keywords" content="MH"/>
+    <meta name="description" content="MH"/>
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/game.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/game.js"></script>
+</head>
+
+<body>
+<div class="content_center">
+    <h2 class="cj-p"> 请输入名字</h2>
+
+    <div class="search_box">
+        <ul id="search_form">
+            <input type="text" id="hunterName" placeholder="必填" class="swap_value"/>
+            <input type="button" value="我要去战斗!!!" width="27" height="24" class="cj-queren"/>
+        </ul>
+    </div>
+
+    <div class="cj-cx-info">
+        <button type="button" class="ivu-btn ivu-btn-primary "><span>战斗信息</span></button>
+    </div>
+
+    <div class="Top_Record" style="display:none;">
+        <div class="record_Top"><p>信息</p></div>
+        <div class="topRec_List">
+            <div class="maquee">
+                <ul class="cj-fight-info-list"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

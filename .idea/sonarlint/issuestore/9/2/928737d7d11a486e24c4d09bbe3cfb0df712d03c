@@ -1,0 +1,11 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ûìƒ›şÿÿÿÿ
+A
+java:S1168?"+Return an empty collection instead of null.(¥¹ï
+W
+java:S1854K"<Remove this useless assignment to local variable "fightStr".(ÛÈšûÿÿÿÿ
+W
+java:S1854W"<Remove this useless assignment to local variable "fightStr".(Ø÷ÄÂÿÿÿÿÿ
+V	java:S125O"<This block of commented-out lines of code should be removed.(ÙÃœÒıÿÿÿÿ
+H
+java:S1481K"-Remove this unused "fightStr" local variable.(ÛÈšûÿÿÿÿ

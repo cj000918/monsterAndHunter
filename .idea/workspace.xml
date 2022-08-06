@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a7dd5f2-bd21-4484-8460-017cc50a5055" name="Default Changelist" comment="引入mybatis&#10;有BUG暂未解决:&#10; mapper.java文件注入失败">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_17_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_0_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mh.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/MhApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/MhApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/FightInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/FightInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/HunterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/HunterDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/MonsterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/dao/MonsterDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/FightInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/FightInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/HunterNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/HunterNew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/MonsterNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/MonsterNew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/entity/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/job/JobWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/job/JobWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/mapper/HunterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/mapper/HunterMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/FightInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/FightInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/HunterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/HunterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/FightServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/FightServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/HunterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/HunterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application_old.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/fightingMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/fightingMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/mapperConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/mapperConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/redis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/redis_old.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/MhApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/MhApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/controller/NewGameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/controller/NewGameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/FightInfoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/FightInfoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/HunterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/HunterDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/dao/MonsterDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/dao/MonsterDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/FightInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/FightInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/HunterNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/HunterNew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/MonsterNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/MonsterNew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/entity/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/entity/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/job/FightWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/job/FightWorker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/FightInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/FightInfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/HunterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/HunterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/FightServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/FightServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/HunterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/chenjian/service/Impl/HunterServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/redis.properties" beforeDir="false" />
-    </list>
+    <list default="true" id="0a7dd5f2-bd21-4484-8460-017cc50a5055" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,8 +14,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -84,25 +31,34 @@
     </option>
     <option name="AUTO_COMMIT_ON_CHERRY_PICK" value="true" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/cj000918/monsterAndHunter.git" />
+      </set>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/chenjian/job/FightWorker.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/chenjian/util/WeaponUtil.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\my_space\My_Code\monsterAndHunter\.idea" />
+      </set>
+    </option>
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
       <facet id="mh/invalid/Web" />
     </ignored-facets>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/development_soft/apache-maven-3.6.3-bin/apache-maven-3.6.3" />
-        <option name="userSettingsFile" value="D:\My_Code\mvn_m2\setting.xml" />
+        <option name="mavenHome" value="D:/development_soft/apache-maven-3.8.1/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\development_soft\apache-maven-3.8.1\apache-maven-3.8.1\conf\settings-aliyun.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -111,28 +67,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1dl5CEm4mOCcHMVE31FRVJT2EQ8" />
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Code style issuesJava</id>
-          </State>
-          <State>
-            <id>Internationalization</id>
-          </State>
-          <State>
-            <id>InternationalizationJava</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-        </expanded-state>
-      </profile-state>
-    </entry>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
+  <component name="ProjectId" id="1dl5CEm4mOCcHMVE31FRVJT2EQ8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
@@ -149,17 +87,19 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="mh" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/application.properties" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.43218392" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -168,11 +108,171 @@
       <recent name="com.chenjian.controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.chenjian.enums.base" />
       <recent name="com.chenjian.entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My_Code\monsterAndHunter\src\main\resources\mapper" />
     </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/hunter/getFighting/703302419882180608" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/hunter/getFighting/五十个佳佳" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/hunter/fight/五十个佳佳" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/hunter/fight" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="五十个佳佳" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/hunter/fight" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="五十个佳佳" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/hunter/fight" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="hunterName" />
+                <option name="value" value="五十个佳佳" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/hunterfight" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="五十个佳佳" />
+                <option name="value" value="" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.MhApplication">
     <configuration name="MhApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -214,6 +314,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="MhApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mh" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.chenjian.MhApplication" />
@@ -231,13 +337,11 @@
         <item itemvalue="Application.MhApplication" />
         <item itemvalue="Application.SnowflakeIdWorker" />
         <item itemvalue="Application.ThreadTest" />
-        <item itemvalue="Application.ThreadTest" />
-        <item itemvalue="Application.SnowflakeIdWorker" />
       </list>
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\EDZ\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -284,6 +388,14 @@
       <workItem from="1587782984634" duration="1617000" />
       <workItem from="1589771583731" duration="3463000" />
       <workItem from="1590029574231" duration="26740000" />
+      <workItem from="1606445428163" duration="1384000" />
+      <workItem from="1606447014640" duration="1419000" />
+      <workItem from="1614323644111" duration="379000" />
+      <workItem from="1614324069183" duration="277000" />
+      <workItem from="1614324404462" duration="309000" />
+      <workItem from="1614324760200" duration="1880000" />
+      <workItem from="1614931676062" duration="2680000" />
+      <workItem from="1615195829722" duration="893000" />
     </task>
     <task id="LOCAL-00001" summary="代码架构调整&#10;准备将写在实体中的方法提取出来">
       <created>1567166550898</created>
@@ -411,11 +523,50 @@
       <option name="project" value="LOCAL" />
       <updated>1594708274504</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="1.解决mapper.java文件注入失败&#10;2.优化引入mybatis导致的问题&#10;3.properties文件转换为yml&#10;问题: &#10;   1.后续继续讲DAO转换为mybatis&#10;   2.解决插入的过程中无法即时查询战斗信息的BUG">
+      <created>1596470727046</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1596470727046</updated>
+    </task>
+    <task id="LOCAL-00020" summary="1.新增全局异常处理&#10;2.新增封装返回体&#10;问题: &#10;   1.后续继续讲DAO转换为mybatis&#10;   2.解决插入的过程中无法即时查询战斗信息的BUG">
+      <created>1596510427980</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1596510427980</updated>
+    </task>
+    <task id="LOCAL-00021" summary="代码优化">
+      <created>1606446623809</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1606446623809</updated>
+    </task>
+    <task id="LOCAL-00022" summary="代码优化">
+      <created>1659696129555</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1659696129555</updated>
+    </task>
+    <task id="LOCAL-00023" summary="代码优化">
+      <created>1659758243624</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1659758243625</updated>
+    </task>
+    <task id="LOCAL-00024" summary="代码优化">
+      <created>1659758432846</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1659758432846</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -442,6 +593,41 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="3">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="4">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="5">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="6">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="7">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -472,116 +658,106 @@
     <MESSAGE value="优化页面以及JS" />
     <MESSAGE value="引入mybatis" />
     <MESSAGE value="引入mybatis&#10;有BUG暂未解决:&#10; mapper.java文件注入失败" />
-    <option name="LAST_COMMIT_MESSAGE" value="引入mybatis&#10;有BUG暂未解决:&#10; mapper.java文件注入失败" />
+    <MESSAGE value="1.解决mapper.java文件注入失败&#10;2.优化引入mybatis导致的问题&#10;3.properties文件转换为yml&#10;问题: &#10;   1.后续继续讲DAO转换为mybatis&#10;   2.解决插入的过程中无法即时查询战斗信息的BUG" />
+    <MESSAGE value="1.新增全局异常处理&#10;2.新增封装返回体&#10;问题: &#10;   1.后续继续讲DAO转换为mybatis&#10;   2.解决插入的过程中无法即时查询战斗信息的BUG" />
+    <MESSAGE value="代码优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码优化" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594642715236">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1659756474254">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="134" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1360.728@0.0.1360.728" timestamp="1594642715236" />
-    <state x="485" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1596457520741">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1659756474254" />
+    <state x="611" y="125" width="1083" height="830" key="CommitChangelistDialog2" timestamp="1659758430297">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="485" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1360.728@0.0.1360.728" timestamp="1596457520741" />
-    <state x="217" y="0" key="CommitChangelistDialog2" timestamp="1594708303009">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="-1745" y="-191" width="1485" height="1078" key="CommitChangelistDialog2/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659696126883" />
+    <state x="611" y="125" width="1083" height="830" key="CommitChangelistDialog2/0.0.1920.1032@0.0.1920.1032" timestamp="1659758430297" />
+    <state width="1170" height="489" key="DebuggerActiveHint" timestamp="1659693797352">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state x="217" y="0" key="CommitChangelistDialog2/0.0.1360.728@0.0.1360.728" timestamp="1594708303009" />
-    <state width="472" height="463" key="DebuggerActiveHint" timestamp="1596468349581">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1170" height="489" key="DebuggerActiveHint/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659693797352" />
+    <state x="-85" y="220" width="1536" height="853" key="DiffContextDialog" timestamp="1659754198500">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state width="472" height="463" key="DebuggerActiveHint/0.0.1360.728@0.0.1360.728" timestamp="1596468349581" />
-    <state x="14" y="55" key="DiffContextDialog" timestamp="1594630026070">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="-1778" y="-83" key="DiffContextDialog/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659696140074" />
+    <state x="-85" y="220" width="1536" height="853" key="DiffContextDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1659754198500" />
+    <state x="-1952" y="39" key="FileChooserDialogImpl" timestamp="1659684796917">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state x="14" y="55" key="DiffContextDialog/0.0.1360.728@0.0.1360.728" timestamp="1594630026070" />
-    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1592987004903">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="-1952" y="39" key="FileChooserDialogImpl/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659684796917" />
+    <state width="1258" height="480" key="GridCell.Tab.0.bottom" timestamp="1659697233793">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1592987004903" />
-    <state width="1317" height="444" key="GridCell.Tab.0.bottom" timestamp="1596470510933">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.0.bottom/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233793" />
+    <state width="1258" height="480" key="GridCell.Tab.0.center" timestamp="1659697233793">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.0.bottom/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
-    <state width="1317" height="444" key="GridCell.Tab.0.center" timestamp="1596470510933">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.0.center/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233793" />
+    <state width="1258" height="480" key="GridCell.Tab.0.left" timestamp="1659697233793">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.0.center/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
-    <state width="1317" height="444" key="GridCell.Tab.0.left" timestamp="1596470510932">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.0.left/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233793" />
+    <state width="1258" height="480" key="GridCell.Tab.0.right" timestamp="1659697233793">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.0.left/0.0.1360.728@0.0.1360.728" timestamp="1596470510932" />
-    <state width="1317" height="444" key="GridCell.Tab.0.right" timestamp="1596470510933">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.0.right/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233793" />
+    <state width="1258" height="480" key="GridCell.Tab.1.bottom" timestamp="1659697233794">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.0.right/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
-    <state width="1317" height="444" key="GridCell.Tab.1.bottom" timestamp="1596470510933">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.1.bottom/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233794" />
+    <state width="1258" height="480" key="GridCell.Tab.1.center" timestamp="1659697233794">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.1.bottom/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
-    <state width="1317" height="444" key="GridCell.Tab.1.center" timestamp="1596470510933">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.1.center/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233794" />
+    <state width="1258" height="480" key="GridCell.Tab.1.left" timestamp="1659697233794">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.1.center/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
-    <state width="1317" height="444" key="GridCell.Tab.1.left" timestamp="1596470510933">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.1.left/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233794" />
+    <state width="1258" height="480" key="GridCell.Tab.1.right" timestamp="1659697233794">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.1.left/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
-    <state width="1317" height="444" key="GridCell.Tab.1.right" timestamp="1596470510933">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="1258" height="480" key="GridCell.Tab.1.right/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697233794" />
+    <state x="-1884" y="-79" key="SettingsEditor" timestamp="1659696491454">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="1317" height="444" key="GridCell.Tab.1.right/0.0.1360.728@0.0.1360.728" timestamp="1596470510933" />
-    <state x="210" y="19" key="Maven.ArtifactSearchDialog" timestamp="1594648009453">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="-1884" y="-79" key="SettingsEditor/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659696491454" />
+    <state width="533" height="446" key="SwitcherDM" timestamp="1659691368235">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state x="210" y="19" key="Maven.ArtifactSearchDialog/0.0.1360.728@0.0.1360.728" timestamp="1594648009453" />
-    <state x="181" y="0" key="SettingsEditor" timestamp="1596467415395">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state width="533" height="446" key="SwitcherDM/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659691368235" />
+    <state x="559" y="184" key="Vcs.Push.Dialog.v2" timestamp="1659758515590">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="181" y="0" key="SettingsEditor/0.0.1360.728@0.0.1360.728" timestamp="1596467415395" />
-    <state width="515" height="446" key="SwitcherDM" timestamp="1596468507270">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="-1688" y="69" key="Vcs.Push.Dialog.v2/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659697133868" />
+    <state x="559" y="184" key="Vcs.Push.Dialog.v2/0.0.1920.1032@0.0.1920.1032" timestamp="1659758515590" />
+    <state x="-1726" y="72" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1659693639521">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state width="515" height="446" key="SwitcherDM/0.0.1360.728@0.0.1360.728" timestamp="1596468507270" />
-    <state x="272" y="100" key="Vcs.Push.Dialog.v2" timestamp="1594708297397">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="-1726" y="72" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659693639521" />
+    <state x="-1604" y="-65" width="647" height="801" key="find.popup" timestamp="1659690072717">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state x="272" y="100" key="Vcs.Push.Dialog.v2/0.0.1360.728@0.0.1360.728" timestamp="1594708297397" />
-    <state x="360" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1596439308682">
-      <screen x="0" y="0" width="1360" height="728" />
+    <state x="-1604" y="-65" width="647" height="801" key="find.popup/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659690072717" />
+    <state x="-1485" y="-47" width="672" height="678" key="search.everywhere.popup" timestamp="1659690352306">
+      <screen x="-2560" y="-360" width="2560" height="1392" />
     </state>
-    <state x="360" y="188" key="com.intellij.ide.util.TipDialog/0.0.1360.728@0.0.1360.728" timestamp="1596439308682" />
-    <state x="248" y="100" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596449955292">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="248" y="100" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1360.728@0.0.1360.728" timestamp="1596449955292" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596455549856">
-      <screen x="0" y="0" width="1360" height="728" />
-    </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1596455549856" />
+    <state x="-1485" y="-47" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032/-2560.-360.2560.1392@-2560.-360.2560.1392" timestamp="1659690352306" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/service/Impl/FightServiceImpl.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/others/SpringContextHolder.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="90" />
+          <line>130</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/controller/NewGameController.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="91" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/chenjian/job/FightWorker.java</url>
+          <line>185</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -590,5 +766,9 @@
         <watch expression="pstmt" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

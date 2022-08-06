@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chenjian.mapper.HunterMapper">
+
+    <resultMap id="HunterNew" type="com.chenjian.entity.base.HunterNew">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="max_life" property="maxLife"/>
+        <result column="cur_life" property="curLife" />
+        <result column="max_attack" property="maxAttack" />
+        <result column="min_attack" property="minAttack" />
+        <result column="defend" property="defend"/>
+        <result column="level" property="level"/>
+        <result column="exp" property="exp"/>
+        <result column="need_exp" property="needExp"/>
+        <result column="agile" property="agile"/>
+        <result column="hide_rate" property="hideRate"/>
+        <result column="create_time" property="createTime"/>
+        <result column="hunter_id" property="hunterId"/>
+    </resultMap>
+
+    <insert id="addHunterInfo" useGeneratedKeys="true" keyProperty="hunterId"  keyColumn="hunter_id">
+        insert into hunter_info (name,max_life,cur_life,max_attack,min_attack,defend,level,exp,need_exp,agile,hide_rate,hunter_id) values
+        (#{hunterNew.name},#{hunterNew.maxLife},#{hunterNew.curLife},#{hunterNew.maxAttack},#{hunterNew.minAttack},#{hunterNew.defend},
+        #{hunterNew.level},#{hunterNew.exp},#{hunterNew.needExp},#{hunterNew.agile},#{hunterNew.hideRate},#{hunterNew.hunterId})
+    </insert>
+
+    <select id="getHunterInfo" resultMap="HunterNew">
+        select * from hunter_info where hunter_id = #{hunterId}
+    </select>
+
+    <select id="getHunterByName" resultMap="HunterNew">
+        select * from  hunter_info where name like CONCAT('%',#{hunterName},'%')
+    </select>
+
+    <select id="getFightInfoList" resultType="com.chenjian.entity.base.FightInfo">
+
+
+    </select>
+
+</mapper>

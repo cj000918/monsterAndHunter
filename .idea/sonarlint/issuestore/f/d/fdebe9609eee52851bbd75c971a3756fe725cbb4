@@ -1,0 +1,31 @@
+
+O	java:S106„"9Replace this use of System.out or System.err by a logger.(±…Ñã
+g
+java:S1192ç"KDefine a constant instead of duplicating this literal " è¡€é‡: -" 4 times.(ƒğ‚ıûÿÿÿÿ
+d
+java:S1192Š"HDefine a constant instead of duplicating this literal "curLife" 3 times.(Û©é¡ùÿÿÿÿ
+@
+java:S5411l"*Use the primitive boolean expression here.(ß‰´œ
+O	java:S106ò"9Replace this use of System.out or System.err by a logger.(¹–ç
+P
+java:S4973Ñ"9Use the "equals" method if value comparison was intended.(‰³ú 
+S	java:S106n"9Replace this use of System.out or System.err by a logger.(°ÇÍŒÿÿÿÿÿ
+O	java:S106 "9Replace this use of System.out or System.err by a logger.(»­Úµ
+`
+java:S11922"KDefine a constant instead of duplicating this literal "monsterNew" 3 times.(µã’,
+O	java:S106Ê"9Replace this use of System.out or System.err by a logger.(‹Á†Ó
+T	java:S106›"9Replace this use of System.out or System.err by a logger.(ª„òûÿÿÿÿ
+^
+java:S11923"HDefine a constant instead of duplicating this literal "isFirst" 3 times.(êğ×ƒ
+E
+java:S5411i"*Use the primitive boolean expression here.(Ì© ‘üÿÿÿÿ
+O	java:S106Ó"9Replace this use of System.out or System.err by a logger.(–˜ú›
+T	java:S106ç"9Replace this use of System.out or System.err by a logger.(ƒğ‚ıûÿÿÿÿ
+N	java:S106İ"9Replace this use of System.out or System.err by a logger.(£’Ò&
+O	java:S106–"9Replace this use of System.out or System.err by a logger.(Á˜ªŞ
+S	java:S106t"9Replace this use of System.out or System.err by a logger.(öÅÅùÿÿÿÿ
+`
+java:S11921"JDefine a constant instead of duplicating this literal "hunterNew" 3 times.(ÍØˆ“
+O	java:S106Œ"9Replace this use of System.out or System.err by a logger.(Ã¼ö
+H
+java:S1481a"-Remove this unused "lostLife" local variable.(ÿ¢óşÿÿÿÿ

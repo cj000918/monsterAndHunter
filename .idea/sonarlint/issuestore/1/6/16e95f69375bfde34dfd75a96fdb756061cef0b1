@@ -1,0 +1,7 @@
+
+m
+java:S2159ª"VRemove this call to "equals"; comparisons between unrelated types always return false.(²Ş
+^
+java:S44885"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Õ§¦ª
+q
+java:S2159y"VRemove this call to "equals"; comparisons between unrelated types always return false.(‰Ô††ûÿÿÿÿ

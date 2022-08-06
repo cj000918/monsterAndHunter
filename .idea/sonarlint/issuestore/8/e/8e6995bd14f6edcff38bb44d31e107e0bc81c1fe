@@ -1,0 +1,18 @@
+
+j
+java:S2095`"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(éîÑŞøÿÿÿÿ
+j
+java:S20951"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Âîñ€úÿÿÿÿ
+_
+java:S2583J"DChange this condition so that it does not always evaluate to "false"(æÕÀÃøÿÿÿÿ
+_
+java:S2583}"DChange this condition so that it does not always evaluate to "false"(æÕÀÃøÿÿÿÿ
+h	java:S116"SRename this field "USERNAMR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ÔâÜ
+h	java:S116"SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À‚û–
+c	java:S116!"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºë½Ñ
+Q
+java:S26960"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+>	java:S108K")Either remove or fill this block of code.(”ı¾
+Q
+java:S2696_"6Make the enclosing method "static" or remove this set.(©›¥îıÿÿÿÿ
+>	java:S108~")Either remove or fill this block of code.(”ı¾

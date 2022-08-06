@@ -1,0 +1,51 @@
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+  mvc:
+    static-path-pattern: /static/**
+  #MySQL
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://www.creedzwg.top/CJ_DB?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: agent123
+
+  #redis
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: qpc_redis
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+      timeout: 10000
+
+#mybatis配置
+mybatis:
+  mapperLocations: classpath:mapper/fightingMapper.xml
+
+
+#MySQL(TODO 暂时备用, DAO未全部引用Mybatis)
+jdbc_driverClassName: com.mysql.jdbc.Driver
+jdbc_url: jdbc:mysql://www.creedzwg.top/CJ_DB?useUnicode=true&characterEncoding=UTF-8
+jdbc_username: root
+jdbc_password: agent123
+
+
+
+
