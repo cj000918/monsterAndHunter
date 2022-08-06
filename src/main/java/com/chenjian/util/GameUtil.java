@@ -3,32 +3,32 @@ package com.chenjian.util;
 import java.util.Scanner;
 
 public class GameUtil {
-   
-	
-	public static long randomaRange(long start,long end){
-        return (long)(Math.random()*(end - start + 1)+start);
-    }
-	
-	public static long randomaNumber(long number){
-        return (long)(Math.random() * number);
-    }
-    
-	
-	public static boolean hidden(long hideRate){
-    	
+
+
+	public static long randomRange(long start, long end) {
+		return (long) (Math.random() * (end - start + 1) + start);
+	}
+
+	public static long randomNumber(long number) {
+		return (long) (Math.random() * number);
+	}
+
+
+	public static boolean hidden(long hideRate) {
+
 		long hitRate = 100 - hideRate;//100减去被攻击方的闪避, 得到攻击方的命中率
-		
-		long ran = GameUtil.randomaNumber(100);
-		
+
+		long ran = GameUtil.randomNumber(100);
+
 		long result = ran + hitRate;
-		
+
 		//命中率加上 100以内随机数, 如果结果大于100 则为被命中, 否则为闪避
-		if(result > 100) {
-			 return false;
-		}else {
+		if (result > 100) {
+			return false;
+		} else {
 			return true;
 		}
-    }
+	}
 
 	/**
 	 * 如果返回false则表示先手失败
@@ -36,17 +36,17 @@ public class GameUtil {
 	 * @param monsterHideRate
 	 * @return
 	 */
-    public static Boolean hidden(Long hunterHideRate, Long monsterHideRate){
+    public static Boolean hidden(Long hunterHideRate, Long monsterHideRate) {
 
 		long hitRate1 = 100 - hunterHideRate;//100减去被攻击方的闪避, 得到攻击方的命中率
-		long ran1 = GameUtil.randomaNumber(100);
+		long ran1 = GameUtil.randomNumber(100);
 		long result1 = ran1 + hitRate1;
 
 		long hitRate2 = 100 - monsterHideRate;//100减去被攻击方的闪避, 得到攻击方的命中率
-		long ran2 = GameUtil.randomaNumber(100);
+		long ran2 = GameUtil.randomNumber(100);
 		long result2 = ran2 + hitRate2;
 
-		if(result1 < result2){
+		if (result1 < result2) {
 			return false;
 		}
 		return true;
@@ -54,19 +54,19 @@ public class GameUtil {
   
 	static long lostBasicLife = 1;
    
-    public static long calLostLife(long maxAttack, long minAttack, long defend){
-    	
-    	long attack = randomaRange(minAttack, maxAttack);
-    	
-    	long lostLife = attack-defend;
-    	long rel = 0;
-        if(lostLife<=0){
-            rel = lostBasicLife;
-        }else{
-            rel = (lostLife+lostBasicLife);
-        }
-        return rel;
-    }
+    public static long calLostLife(long maxAttack, long minAttack, long defend) {
+
+		long attack = randomRange(minAttack, maxAttack);
+
+		long lostLife = attack - defend;
+		long rel = 0;
+		if (lostLife <= 0) {
+			rel = lostBasicLife;
+		} else {
+			rel = (lostLife + lostBasicLife);
+		}
+		return rel;
+	}
 
     
     public static String getHunterName(){

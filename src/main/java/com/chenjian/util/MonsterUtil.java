@@ -87,48 +87,48 @@ public class MonsterUtil {
 		long maxAttack = 0;
 		
 		if(monsterGrade.equals(MonsterGradeEnums.HUAN_BING.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(5) + 5;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.PU_TONG.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(10) + 10;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.YI_BAN.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(15) + 15;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.BIAN_YI.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(20) + 15;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.CHAO_JI.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(25) + 20;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.JING_YING.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(30) + 35;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.KUANG_HUA.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(30) + 30;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.FEN_NU.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(35) + 30;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.BAO_ZAO.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(40) + 35;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.SHI_XUE.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(45) + 40;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.ZHI_MING.getShowName())){
-			
-			maxAttack = GameUtil.randomaNumber(50) + 45;
+
+			maxAttack = GameUtil.randomNumber(5) + 5;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.PU_TONG.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(10) + 10;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.YI_BAN.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(15) + 15;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.BIAN_YI.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(20) + 15;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.CHAO_JI.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(25) + 20;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.JING_YING.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(30) + 35;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.KUANG_HUA.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(30) + 30;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.FEN_NU.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(35) + 30;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.BAO_ZAO.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(40) + 35;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.SHI_XUE.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(45) + 40;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.ZHI_MING.getShowName())) {
+
+			maxAttack = GameUtil.randomNumber(50) + 45;
 		}
 		
 		return maxAttack;
@@ -143,49 +143,49 @@ public class MonsterUtil {
 		
 		long minAttack = 0;
 		
-		if(monsterGrade.equals(MonsterGradeEnums.HUAN_BING.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(5) + 3;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.PU_TONG.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(5) + 8;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.YI_BAN.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(10) + 10;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.BIAN_YI.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(15) + 10;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.CHAO_JI.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(17) + 15;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.JING_YING.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(20) + 16;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.KUANG_HUA.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(18) + 20;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.FEN_NU.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(19) + 25;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.BAO_ZAO.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(20) + 30;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.SHI_XUE.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(21) + 35;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.ZHI_MING.getShowName())){
-			
-			minAttack = GameUtil.randomaNumber(22) + 40;
+		if(monsterGrade.equals(MonsterGradeEnums.HUAN_BING.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(5) + 3;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.PU_TONG.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(5) + 8;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.YI_BAN.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(10) + 10;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.BIAN_YI.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(15) + 10;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.CHAO_JI.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(17) + 15;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.JING_YING.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(20) + 16;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.KUANG_HUA.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(18) + 20;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.FEN_NU.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(19) + 25;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.BAO_ZAO.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(20) + 30;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.SHI_XUE.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(21) + 35;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.ZHI_MING.getShowName())) {
+
+			minAttack = GameUtil.randomNumber(22) + 40;
 		}
 		
 		return minAttack;
@@ -222,49 +222,49 @@ public class MonsterUtil {
 		
 		long agile = 0;
 		
-		if(monsterGrade.equals(MonsterGradeEnums.HUAN_BING.getShowName())){
-			
-			agile = GameUtil.randomaNumber(1) + 5;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.PU_TONG.getShowName())){
-			
-			agile = GameUtil.randomaNumber(6) + 8;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.YI_BAN.getShowName())){
-			
-			agile = GameUtil.randomaNumber(7) + 10;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.BIAN_YI.getShowName())){
-			
-			agile = GameUtil.randomaNumber(10) + 12;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.CHAO_JI.getShowName())){
-			
-			agile = GameUtil.randomaNumber(30) + 15;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.JING_YING.getShowName())){
-			
-			agile = GameUtil.randomaNumber(35) + 18;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.KUANG_HUA.getShowName())){
-			
-			agile = GameUtil.randomaNumber(40) + 20;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.FEN_NU.getShowName())){
-			
-			agile = GameUtil.randomaNumber(50) + 30;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.BAO_ZAO.getShowName())){
-			
-			agile = GameUtil.randomaNumber(55) + 20;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.SHI_XUE.getShowName())){
-			
-			agile = GameUtil.randomaNumber(60) + 30;
-			
-		}else if(monsterGrade.equals(MonsterGradeEnums.ZHI_MING.getShowName())){
-			
-			agile = GameUtil.randomaNumber(70) + 30;
+		if(monsterGrade.equals(MonsterGradeEnums.HUAN_BING.getShowName())) {
+
+			agile = GameUtil.randomNumber(1) + 5;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.PU_TONG.getShowName())) {
+
+			agile = GameUtil.randomNumber(6) + 8;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.YI_BAN.getShowName())) {
+
+			agile = GameUtil.randomNumber(7) + 10;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.BIAN_YI.getShowName())) {
+
+			agile = GameUtil.randomNumber(10) + 12;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.CHAO_JI.getShowName())) {
+
+			agile = GameUtil.randomNumber(30) + 15;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.JING_YING.getShowName())) {
+
+			agile = GameUtil.randomNumber(35) + 18;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.KUANG_HUA.getShowName())) {
+
+			agile = GameUtil.randomNumber(40) + 20;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.FEN_NU.getShowName())) {
+
+			agile = GameUtil.randomNumber(50) + 30;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.BAO_ZAO.getShowName())) {
+
+			agile = GameUtil.randomNumber(55) + 20;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.SHI_XUE.getShowName())) {
+
+			agile = GameUtil.randomNumber(60) + 30;
+
+		}else if(monsterGrade.equals(MonsterGradeEnums.ZHI_MING.getShowName())) {
+
+			agile = GameUtil.randomNumber(70) + 30;
 		}
 		
 		return agile;
@@ -275,20 +275,20 @@ public class MonsterUtil {
 	 * @param hunterHideRate
 	 * @return
 	 */
-	public static long getHideRate(long hunterHideRate){
-		
+	public static long getHideRate(long hunterHideRate) {
+
 		long hideRate = 5;//基础闪避率
-		 
-		long ran = GameUtil.randomaNumber(100);
-		
-		long result = hideRate * 1/4;
-		
-		if(result < 1){
+
+		long ran = GameUtil.randomNumber(100);
+
+		long result = hideRate * 1 / 4;
+
+		if (result < 1) {
 			result = 1;
 		}
-		
-		if(ran > 50){
-			
+
+		if (ran > 50) {
+
 			hideRate = hunterHideRate + result;
 		}else {
 			hideRate = hunterHideRate - result;
